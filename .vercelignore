@@ -1,0 +1,8 @@
+.git
+.pnpm-store
+node_modules
+package-lock.json
+*.md
+public/icons
+public/content
+public/logo*.png
