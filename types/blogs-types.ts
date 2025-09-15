@@ -72,18 +72,19 @@ interface Author {
 }
 
 const CATEGORIES = [
-  { value: "all", label: "All Categories" },
-  { value: "DSA", label: "DSA" },
-  { value: "Job Posting", label: "Job Posting" },
-  { value: "WebDev", label: "Web Development" },
-  { value: "AI", label: "Artificial Intelligence" },
-  { value: "ML", label: "Machine Learning" },
-  { value: "Skill Development", label: "Skill Development" },
-  { value: "Resume and Cover Letter Guidance", label: "Resume & Cover Letter" },
-  { value: "Interview Preparation", label: "Interview Prep" },
-  { value: "Tech-news", label: "Tech News" },
-  { value: "Internship", label: "Internship" },
-  { value: "Others", label: "Others" }
+  { value: "all", label: "All Reports" },
+  { value: "job", label: "Job / Employment Scam" },
+  { value: "internship", label: "Internship Scam" },
+  { value: "loan", label: "Loan / Finance Scam" },
+  { value: "investment", label: "Investment / Trading Scam" },
+  { value: "ecommerce", label: "E-commerce / Online Purchase Scam" },
+  { value: "phishing", label: "Phishing / Fraud Links" },
+  { value: "identity", label: "Identity Theft" },
+  { value: "romance", label: "Romance / Relationship Scam" },
+  { value: "crypto", label: "Crypto / Digital Asset Scam" },
+  { value: "service", label: "Fake Services / Agencies" },
+  { value: "techsupport", label: "Tech Support Scam" },
+  { value: "others", label: "Others" }
 ];
 
 const READINGTIME = [
@@ -142,7 +143,7 @@ interface BlogState {
   blogId: string;
   status: 'draft' | 'archived' | 'private' | 'pending_review' | 'rejected' | 'deleted' | 'approved';
   tagAutoGen: boolean;
-  editorMode: 'markdown' | 'visual' | 'html';
+  editorMode: 'markdown' | 'visual';
 }
 
 export interface EditBlogState {

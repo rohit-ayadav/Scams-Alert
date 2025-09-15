@@ -23,7 +23,7 @@ interface EditorCardProps {
     isEdit?: boolean;
 }
 interface EditorMode {
-    editorMode: 'markdown' | 'visual' | 'html';
+    editorMode: 'markdown' | 'visual';
 }
 
 const EditorCard: React.FC<EditorCardProps> = ({
@@ -47,7 +47,7 @@ const EditorCard: React.FC<EditorCardProps> = ({
         updateState({ [key]: content });
     }, [state.editorMode, updateState]);
 
-    const handleEditorModeToggle = useCallback((editorMode: 'markdown' | 'visual' | 'html') => {
+    const handleEditorModeToggle = useCallback((editorMode: 'markdown' | 'visual') => {
         updateState({ editorMode });
     }, [updateState]);
 

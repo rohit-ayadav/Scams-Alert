@@ -225,14 +225,13 @@ const SectionLoading = () => (
 interface HomePageProps {
     posts: BlogPostType[];
     users: UserType[];
-    techNewsPosts: BlogPostType[];
     totalLikes: number;
     totalViews: number;
     totalBlogs: number;
     totalUsers: number;
 }
 
-const HomePage = ({ posts, users, techNewsPosts, totalLikes, totalViews, totalBlogs, totalUsers }: HomePageProps) => {
+const HomePage = ({ posts, users, totalLikes, totalViews, totalBlogs, totalUsers }: HomePageProps) => {
     const { isDarkMode } = useTheme();
     const [isVisible, setIsVisible] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
@@ -439,11 +438,6 @@ const HomePage = ({ posts, users, techNewsPosts, totalLikes, totalViews, totalBl
                 </Suspense>
             )}
 
-            {loadPriority1 && (
-                <Suspense fallback={<SectionLoading />}>
-                    <FeatureBlog posts={techNewsPosts} users={users} isDarkMode={isDarkMode} />
-                </Suspense>
-            )}
             {/* Featured Authors - Priority 2 */}
             {loadPriority2 && (
                 <Suspense fallback={<SectionLoading />}>

@@ -19,8 +19,8 @@ const ReactQuill = dynamic(() => import('react-quill'), {
 
 interface EditorSectionProps {
     content: string;
-    editorMode: 'markdown' | 'visual' | 'html';
-    setEditorMode: (mode: 'markdown' | 'visual' | 'html') => void;
+    editorMode: 'markdown' | 'visual';
+    setEditorMode: (mode: 'markdown' | 'visual') => void;
     handleContentChange: (value: string) => void;
     isDarkMode: boolean;
 }
@@ -165,11 +165,11 @@ export const EditorSection = ({
                 <div className="p-4">
                     <Tabs
                         defaultValue={editorMode}
-                        onValueChange={(value) => setEditorMode(value as 'markdown' | 'visual' | 'html')}
+                        onValueChange={(value) => setEditorMode(value as 'markdown' | 'visual')}
                         className="w-full"
                     >
                         <TabsList className="grid grid-cols-3 mb-4">
-                            {['markdown', 'visual', 'html'].map((mode) => (
+                            {['markdown', 'visual'].map((mode) => (
                                 <TabsTrigger
                                     key={mode}
                                     value={mode}
@@ -224,23 +224,6 @@ export const EditorSection = ({
                                         />
                                     </div>
                                 </Suspense>
-                            </TabsContent>
-
-                            <TabsContent value="html" className="mt-2">
-                                <div className={cn(
-                                    "rounded-md border",
-                                    isDarkMode ? "border-gray-700" : "border-gray-200"
-                                )}>
-                                    <textarea
-                                        value={content}
-                                        onChange={(e) => handleContentChange(e.target.value)}
-                                        className={cn(
-                                            "w-full h-[400px] p-4 resize-none focus:ring-2 focus:ring-primary focus:outline-none rounded-md",
-                                            isDarkMode ? "bg-gray-700 text-gray-100" : "bg-white text-gray-900"
-                                        )}
-                                        placeholder="Enter your HTML content here..."
-                                    />
-                                </div>
                             </TabsContent>
                         </div>
                     </Tabs>

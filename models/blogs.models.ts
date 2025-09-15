@@ -71,6 +71,6 @@ const blogSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Report = mongoose.models.Report || mongoose.model("Report", blogSchema);
+const Blog = mongoose.models.Blog || mongoose.model("Blog", blogSchema);
 
-export default Report;
+export default Blog;

@@ -4,80 +4,89 @@ import { motion } from 'framer-motion';
 import { useTheme } from '@/context/ThemeContext';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils'; // Assuming you have this utility
-
-import {
-    Grid3X3, Briefcase, Code2, Brain, Database,
-    Lightbulb, FileSpreadsheet, FileQuestion,
-    Newspaper, Backpack
-} from 'lucide-react';
+import { Briefcase, GraduationCap, CreditCard, TrendingDown, ShoppingCart, Link2, ShieldAlert, Heart, Coins, Wrench, Laptop, AlertTriangle } from "lucide-react";
 
 const CategoryBrowser = () => {
     const { isDarkMode } = useTheme();
     const router = useRouter();
 
-    // Add icons to categories with color variants
+    // Add icons to scam categories with color variants
+    
     const CATEGORIES_WITH_ICONS = [
         {
-            value: "DSA",
-            label: "DSA",
-            icon: <Database size={24} />,
-            gradient: "from-purple-500 to-indigo-600"
-        },
-        {
-            value: "Job Posting",
-            label: "Job Posting",
+            value: "job",
+            label: "Job / Employment Scam",
             icon: <Briefcase size={24} />,
             gradient: "from-blue-500 to-cyan-600"
         },
         {
-            value: "WebDev",
-            label: "Web Development",
-            icon: <Code2 size={24} />,
-            gradient: "from-green-500 to-emerald-600"
+            value: "internship",
+            label: "Internship Scam",
+            icon: <GraduationCap size={24} />,
+            gradient: "from-emerald-500 to-teal-600"
         },
         {
-            value: "AI",
-            label: "Artificial Intelligence",
-            icon: <Brain size={24} />,
+            value: "loan",
+            label: "Loan / Finance Scam",
+            icon: <CreditCard size={24} />,
+            gradient: "from-purple-500 to-indigo-600"
+        },
+        {
+            value: "investment",
+            label: "Investment / Trading Scam",
+            icon: <TrendingDown size={24} />,
             gradient: "from-red-500 to-orange-600"
         },
         {
-            value: "ML",
-            label: "Machine Learning",
-            icon: <Grid3X3 size={24} />,
+            value: "ecommerce",
+            label: "E-commerce / Online Purchase Scam",
+            icon: <ShoppingCart size={24} />,
+            gradient: "from-green-500 to-emerald-600"
+        },
+        {
+            value: "phishing",
+            label: "Phishing / Fraud Links",
+            icon: <Link2 size={24} />,
             gradient: "from-yellow-500 to-amber-600"
         },
         {
-            value: "Skill Development",
-            label: "Skill Development",
-            icon: <Lightbulb size={24} />,
-            gradient: "from-teal-500 to-green-600"
-        },
-        {
-            value: "Resume and Cover Letter Guidance",
-            label: "Resume & Cover Letter",
-            icon: <FileSpreadsheet size={24} />,
-            gradient: "from-indigo-500 to-blue-600"
-        },
-        {
-            value: "Interview Preparation",
-            label: "Interview Prep",
-            icon: <FileQuestion size={24} />,
+            value: "identity",
+            label: "Identity Theft",
+            icon: <ShieldAlert size={24} />,
             gradient: "from-pink-500 to-rose-600"
         },
         {
-            value: "Tech-news",
-            label: "Tech News",
-            icon: <Newspaper size={24} />,
-            gradient: "from-blue-500 to-sky-600"
+            value: "romance",
+            label: "Romance / Relationship Scam",
+            icon: <Heart size={24} />,
+            gradient: "from-red-500 to-rose-600"
         },
         {
-            value: "Internship",
-            label: "Internship",
-            icon: <Backpack size={24} />,
-            gradient: "from-emerald-500 to-teal-600"
+            value: "crypto",
+            label: "Crypto / Digital Asset Scam",
+            icon: <Coins size={24} />,
+            gradient: "from-indigo-500 to-blue-600"
+        },
+        {
+            value: "service",
+            label: "Fake Services / Agencies",
+            icon: <Wrench size={24} />,
+            gradient: "from-teal-500 to-green-600"
+        },
+        {
+            value: "techsupport",
+            label: "Tech Support Scam",
+            icon: <Laptop size={24} />,
+            gradient: "from-gray-500 to-slate-600"
+        },
+        {
+            value: "others",
+            label: "Others",
+            icon: <AlertTriangle size={24} />,
+            gradient: "from-gray-400 to-gray-600"
         }
     ];
+
 
     const handleCategoryClick = (category: string) => {
         router.push(`/blogs?category=${category}`);
