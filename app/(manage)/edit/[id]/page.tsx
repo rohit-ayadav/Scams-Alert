@@ -26,7 +26,7 @@ async function getBlogData(id: string): Promise<EditBlogState> {
         status: "draft",
         blogId: "",
         createdBy: "",
-        editorMode: "markdown" as 'markdown' | 'visual' | 'html',
+        editorMode: "markdown" as 'markdown' | 'visual',
         slug: "",
         tagAutoGen: false,
     };
@@ -59,7 +59,7 @@ async function getBlogData(id: string): Promise<EditBlogState> {
             status: post.status,
             blogId: post._id.toString(),
             createdBy: post.createdBy,
-            editorMode: post.language as 'markdown' | 'visual' | 'html',
+            editorMode: post.language as 'markdown' | 'visual',
             slug: post.slug,
             tagAutoGen: post.tagAutoGen,
         };

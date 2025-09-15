@@ -161,7 +161,7 @@ export interface EditBlogState {
   category: string;
   blogId: string;
   createdBy: string;
-  editorMode: 'markdown' | 'visual' | 'html';
+  editorMode: 'markdown' | 'visual';
   slug: string;
   tagAutoGen: boolean;
 }
