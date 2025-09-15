@@ -33,7 +33,7 @@ async function getAuthorData() {
     try {
         await connectDB();
         const authors = await User.find({
-            email: { $in: (await Report.distinct('createdBy')) }
+            email: { $in: (await Blog.distinct('createdBy')) }
         }).lean();
 
         const mappedAuthors: UserType[] = authors.map((author: any) => ({

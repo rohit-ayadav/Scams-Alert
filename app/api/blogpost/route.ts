@@ -79,7 +79,7 @@ export async function DELETE(request: NextRequest, response: NextResponse) {
     );
   }
   try {
-    const blogs = await Report.deleteMany({ createdBy: id });
+    const blogs = await Blog.deleteMany({ createdBy: id });
     if (!blogs) {
       return NextResponse.json(
         {

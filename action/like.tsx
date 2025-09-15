@@ -69,7 +69,7 @@ async function likePost(id: string): Promise<InteractionResult> {
         }
 
         // Update the post
-        const post = await Report.findOneAndUpdate(
+        const post = await Blog.findOneAndUpdate(
             filter,
             { $inc: { likes: 1 } },
             {
@@ -131,7 +131,7 @@ async function dislikePost(id: string): Promise<InteractionResult> {
         }
 
         // Update the post
-        const post = await Report.findOneAndUpdate(
+        const post = await Blog.findOneAndUpdate(
             filter,
             { $inc: { likes: -1 } },
             {

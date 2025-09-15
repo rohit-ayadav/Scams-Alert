@@ -21,7 +21,7 @@ export default async function incrementViewInDB(blogId: string, like?: boolean, 
             }
             // Increment views of the blog
             if (!like) {
-                await Report.findOneAndUpdate(
+                await Blog.findOneAndUpdate(
                     { slug: blog.slug },
                     { $inc: { views: 1 } }
                 );
