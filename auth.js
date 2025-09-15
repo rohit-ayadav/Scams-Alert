@@ -116,6 +116,7 @@ export const authOptions = {
                     });
                     return true;
                 }
+                const adminEmail = ['rohitkuyada@gmail.com', 'avinash201199@gmail.com'];
 
                 const newUser = {
                     name: profile.name || profile.login || null,
@@ -123,7 +124,7 @@ export const authOptions = {
                     image: profile.picture || profile.avatar_url || null,
                     provider: account.provider,
                     providerId: profile.id,
-                    role: email === 'rohitkuyada@gmail.com' ? 'admin' : 'user',
+                    role: adminEmail.includes(email) ? 'admin' : 'user',
                 };
 
                 await User.create(newUser);

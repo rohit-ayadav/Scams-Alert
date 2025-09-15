@@ -1,6 +1,10 @@
 "use client";
 import React from 'react';
-import { Mail, Linkedin, Instagram, Twitter, Code, Users, BarChart, Lock, Sparkles, ArrowRight, BookOpen, Globe, Search, Award, Terminal, FileCode, Calendar } from 'lucide-react';
+import {
+  Mail, Linkedin, Instagram, Twitter, Code, Users, BarChart, Lock, Sparkles, ArrowRight, BookOpen, Globe, Search, Award, Terminal, FileCode, Calendar, TrendingDown,
+  HeartHandshake, Briefcase, ShoppingBag, ShieldAlert, User, LayoutDashboard, PenTool,
+  Book
+} from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,79 +14,74 @@ import { GitHub } from 'react-feather';
 const AboutPage = () => {
   const { isDarkMode } = useTheme();
 
+  // Features for ScamAlert
   const features = [
     {
-      icon: <BookOpen className="w-8 h-8 text-blue-500 dark:text-blue-400" />,
-      emoji: "📝",
-      title: "Smart Report Editor",
-      description: "Create content with Markdown, Visual & Raw HTML editors, with auto-generated tags and SEO suggestions."
+      title: "Easy Scam Reporting",
+      description: "Quickly share your scam experience with our simple and guided editor.",
+      icon: <PenTool className="w-6 h-6 text-primary" />
     },
     {
-      icon: <BarChart className="w-8 h-8 text-indigo-500 dark:text-indigo-400" />,
-      emoji: "📊",
-      title: "Author Dashboard",
-      description: "Track your blogs, views, drafts, and monitor Google indexing status all in one place."
+      title: "Track Your Reports",
+      description: "Manage all your submitted reports in one dashboard and monitor visibility.",
+      icon: <LayoutDashboard className="w-6 h-6 text-primary" />
     },
     {
-      icon: <Users className="w-8 h-8 text-green-500 dark:text-green-400" />,
-      emoji: "👤",
-      title: "Author Portfolio",
-      description: "Get your own public profile link that showcases your content and gets indexed by search engines."
+      title: "Your Scam Profile",
+      description: "Build a profile that highlights your reports and contributions to fraud awareness.",
+      icon: <User className="w-6 h-6 text-primary" />
     },
     {
-      icon: <Terminal className="w-8 h-8 text-amber-500 dark:text-amber-400" />,
-      emoji: "🔧",
-      title: "Developer Tools",
-      description: "Access built-in code formatter, markdown previewer, API tester, and JSON/Regex tools."
+      title: "Fraud Awareness Tools",
+      description: "Access resources and guides to identify, prevent, and fight scams.",
+      icon: <ShieldAlert className="w-6 h-6 text-primary" />
     },
     {
-      icon: <FileCode className="w-8 h-8 text-purple-500 dark:text-purple-400" />,
-      emoji: "📚",
-      title: "Cheatsheets & Interview Prep",
-      description: "Access DSA, React, Git tutorials and real interview questions from top companies."
+      title: "Guides & Resources",
+      description: "Read practical guides on how to stay safe from financial and online fraud.",
+      icon: <Book className="w-6 h-6 text-primary" />
     },
     {
-      icon: <Search className="w-8 h-8 text-red-500 dark:text-red-400" />,
-      emoji: "🔍",
-      title: "SEO & Indexing",
-      description: "Submit blogs to Google Search Console with built-in SEO scoring and performance insights."
+      title: "Public Awareness",
+      description: "Your reports help spread awareness and protect others from frauds worldwide.",
+      icon: <Globe className="w-6 h-6 text-primary" />
     },
     {
-      icon: <Calendar className="w-8 h-8 text-teal-500 dark:text-teal-400" />,
-      emoji: "🏆",
-      title: "Events & Contests",
-      description: "Participate in writing challenges, win recognition, and get featured across our platform."
+      title: "Community Awareness Drives",
+      description: "Participate in events, contests, and campaigns to promote scam safety.",
+      icon: <Users className="w-6 h-6 text-primary" />
     },
     {
-      icon: <Code className="w-8 h-8 text-slate-500 dark:text-slate-400" />,
-      emoji: "💻",
-      title: "Developer-Focused",
-      description: "Built specifically for developers, tech writers, and engineering students who want to share knowledge."
+      title: "For Everyone",
+      description: "Whether you're a student, job seeker, shopper, or investor—ScamAlert is for you.",
+      icon: <HeartHandshake className="w-6 h-6 text-primary" />
     }
   ];
 
+  // Target Audience for ScamAlert
   const audiences = [
     {
-      title: "Engineering Students",
-      description: "Document your learning journey, prepare for interviews, and build your portfolio even before graduation.",
-      color: "bg-gradient-to-br from-blue-500/10 to-indigo-500/10 dark:from-blue-800/20 dark:to-indigo-800/20"
+      title: "Job Fraud Victims",
+      description: "For individuals who have faced fake job offers, recruitment scams, or employment fraud.",
+      icon: <Briefcase className="w-6 h-6 text-primary" />
     },
     {
-      title: "Professional Developers",
-      description: "Share expertise, enhance your personal brand, and connect with like-minded tech professionals.",
-      color: "bg-gradient-to-br from-purple-500/10 to-pink-500/10 dark:from-purple-800/20 dark:to-pink-800/20"
+      title: "Online Shoppers",
+      description: "For consumers who were cheated while shopping online through fake websites or sellers.",
+      icon: <ShoppingBag className="w-6 h-6 text-primary" />
     },
     {
-      title: "Tech Writers & Educators",
-      description: "Create impactful technical content with tools designed specifically for explaining complex concepts.",
-      color: "bg-gradient-to-br from-amber-500/10 to-orange-500/10 dark:from-amber-800/20 dark:to-orange-800/20"
+      title: "Investors",
+      description: "For those who lost money in crypto scams, Ponzi schemes, or financial frauds.",
+      icon: <TrendingDown className="w-6 h-6 text-primary" />
     },
     {
-      title: "Job Seekers",
-      description: "Showcase your knowledge, build a discoverable portfolio, and stand out to potential employers.",
-      color: "bg-gradient-to-br from-green-500/10 to-teal-500/10 dark:from-green-800/20 dark:to-teal-800/20"
+      title: "General Public",
+      description: "For anyone who wants to stay safe and spread awareness about scams and frauds.",
+      icon: <Users className="w-6 h-6 text-primary" />
     }
   ];
+
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-200">
@@ -99,10 +98,7 @@ const AboutPage = () => {
                 Welcome to <span className="text-blue-600 dark:text-blue-400">ScamAlert</span>
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 max-w-2xl">
-                A powerful blogging platform crafted especially for developers, tech writers, and engineering students.
-                From cracking interviews to teaching the world what you've learned — ScamAlert is where your developer
-                journey meets content creation.
-              </p>
+               Building scam-free awareness through reporting & community.  </p>
               <div className="mt-8 flex gap-4 flex-wrap">
                 <Button size="lg" className="rounded-md bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600"
                   onClick={() => window.location.href = "/create"}
@@ -177,7 +173,7 @@ const AboutPage = () => {
                     <div className="w-12 h-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center transition-colors group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30">
                       {feature.icon}
                     </div>
-                    <span className="text-2xl opacity-70">{feature.emoji}</span>
+                    {/* <span className="text-2xl opacity-70">{feature.emoji}</span> */}
                   </div>
                   <h3 className="text-lg font-semibold mb-2 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300">
                     {feature.title}
@@ -211,7 +207,7 @@ const AboutPage = () => {
             {audiences.map((audience, index) => (
               <div
                 key={index}
-                className={`rounded-2xl p-6 transition-all duration-300 hover:shadow-lg dark:hover:shadow-gray-900/50 ${audience.color}`}
+                className={`rounded-2xl p-6 transition-all duration-300 hover:shadow-lg dark:hover:shadow-gray-900/50 border border-transparent hover:border-purple-100 dark:hover:border-purple-900/50 bg-white dark:bg-gray-800/50`}
               >
                 <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
                   {audience.title}
