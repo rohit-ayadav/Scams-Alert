@@ -17,10 +17,16 @@ const sendEmail = async ({ to, subject, message }: EmailParams) => {
     const smtpHost = process.env.SMTP_HOST;
     const smtpUser = process.env.SMTP_USER;
     const smtpPassword = process.env.SMTP_PASSWORD;
+    const fromEmail = process.env.FROM_EMAIL;
+    const fromUsername = process.env.FROM_USERNAME;
 
     if (!smtpHost || !smtpUser || !smtpPassword) {
         return { message: "SMTP configuration is missing", error: "SMTP configuration is missing" };
     }
+    if (!fromEmail || !fromUsername) {
+        return { message: "FROM_EMAIL or FROM_USERNAME is not defined", error: "FROM_EMAIL or FROM_USERNAME is not defined" };
+    }
+    
     const transporter = nodemailer.createTransport({
         host: smtpHost,
         port: 587,
@@ -34,8 +40,7 @@ const sendEmail = async ({ to, subject, message }: EmailParams) => {
     try {
         const uniqueId = Date.now(); // Unique ID for email
         const info = await transporter.sendMail({
-            // from: '"ScamAlert" <info@ScamAlert.com>',
-            from: '"ScamAlert" <rohitkuyada@gmail.com>',
+            from: `"${fromUsername}" <${fromEmail}>`,
             to: to,
             subject: subject,
             text: message,
@@ -48,12 +53,13 @@ const sendEmail = async ({ to, subject, message }: EmailParams) => {
             },
             date: new Date(),
         });
+        console.log("\n\nMessage sent: %s", JSON.stringify(info));
 
     } catch (error) {
         console.error("Error sending email:", error);
         return { message: "Email sending failed", error: error };
     }
-
+    console.log("Email sent successfully to:", to);
     return { message: "Email sent successfully", error: "" };
 };
 

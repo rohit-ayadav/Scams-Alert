@@ -54,6 +54,7 @@ const resetPasswordRequest = async (user: any, req: NextRequest): Promise<{ mess
 
     const renderedEmail = FPEmailTemplate(user.name, resetLink);
 
+    console.log(`Sending email to: ${user.email} with reset link: ${resetLink}`);
     // Send the email
     const { message, error } = await sendEmail({
         to: user.email,
