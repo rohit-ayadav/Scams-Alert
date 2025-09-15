@@ -95,13 +95,14 @@ export const authOptions = {
 
         async signIn({ user, account, profile }) {
             const { email } = user;
-
+            const adminEmail = ['rohitkuyada@gmail.com', 'avinash201199@gmail.com'];
             try {
                 // Send email
                 const existingUser = await User.findOne({ email });
                 if (existingUser) {
                     existingUser.provider = account?.provider || existingUser.provider;
                     if (profile) {
+                        existingUser.role = adminEmail.includes(email) ? 'admin' : existingUser.role;
                         existingUser.image = profile.picture || profile.avatar_url || existingUser.image;
                     }
                     await existingUser.save();
@@ -116,8 +117,6 @@ export const authOptions = {
                     });
                     return true;
                 }
-                const adminEmail = ['rohitkuyada@gmail.com', 'avinash201199@gmail.com'];
-
                 const newUser = {
                     name: profile.name || profile.login || null,
                     email: email,
