@@ -33,8 +33,8 @@ export async function generateMetadata({
   title = "ScamAlert - The Ultimate Blogging Platform for Developers",
   description = "Write, publish & grow your tech blog with ScamAlert. 🚀 A feature-rich, customizable blogging platform built for developers using Next.js & TypeScript.",
   slug = "",
-  imageUrl = "https://www.ScamAlert.in/default-thumbnail.png",
-  canonicalUrl = "https://www.ScamAlert.in",
+  imageUrl = "https://scams-alert.vercel.app/default-thumbnail.png",
+  canonicalUrl = "https://scams-alert.vercel.app",
 }: {
   title?: string;
   description?: string;

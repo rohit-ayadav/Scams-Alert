@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 
     const authorName = formatAuthorName(author.name);
     const description = `${author.name}'s expert blogs on web development, JavaScript, React and modern tech. Quality coding insights on ScamAlert.`;
-    const url = `https://www.ScamAlert.in/author/${author.username}`;
+    const url = `https://scams-alert.vercel.app/author/${author.username}`;
     let thumbnail
     if (isValidUrl(author.image))
         thumbnail = author.image;

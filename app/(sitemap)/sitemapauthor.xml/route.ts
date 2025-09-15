@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/utils/db";
 import User from "@/models/users.models";
 
-const BASE_URL = "https://www.ScamAlert.in";
+const BASE_URL = "https://scams-alert.vercel.app";
 
 function generateUsername(fullName: string): string {
     if (!fullName || !fullName.trim()) return "user_" + Math.floor(Math.random() * 1000);

@@ -9,7 +9,7 @@ function isValidUrl(url) {
 }
 
 function convertToAbsoluteUrl(url) {
-    const baseUrl = "https://www.ScamAlert.in";
+    const baseUrl = "https://scams-alert.vercel.app";
     url = url.trim();
 
     if (/^(?:[a-zA-Z][a-zA-Z\d+\-.]*):/.test(url)) {
@@ -58,7 +58,7 @@ self.addEventListener('notificationclick', event => {
     event.notification.close();
     console.log('Notification clicked:', event.notification.data);
 
-    let url = event.notification.data?.url || 'https://www.ScamAlert.in/';
+    let url = event.notification.data?.url || 'https://scams-alert.vercel.app/';
 
     if (!isValidUrl(url)) {
         url = convertToAbsoluteUrl(url);

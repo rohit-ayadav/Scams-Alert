@@ -35,7 +35,7 @@ Welcome to the Report Website! This platform allows users to read, create, and s
 
 ## Live Website
 
-Check out the live website here: [Report Website](https://www.ScamAlert.in/)
+Check out the live website here: [Report Website](https://scams-alert.vercel.app/)
 
 ## Installation and Setup
 

@@ -85,7 +85,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
                 title: 'Report Post Not Found - ScamAlert',
                 description: 'The blog post you are looking for does not exist',
                 images: ['/default-thumbnail.png'],
-                url: 'https://www.ScamAlert.in',
+                url: 'https://scams-alert.vercel.app',
             },
             twitter: {
                 card: 'summary_large_image',
@@ -100,7 +100,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     const title = postData?.title || 'ScamAlert Report Post';
     const thumbnailUrl = postData?.thumbnail || '/default-thumbnail.png';
     const description = postData?.content.replace(/<[^>]*>?/gm, '').substring(0, 140);
-    const url = `https://www.ScamAlert.in/blogs/${response.data.slug}`;
+    const url = `https://scams-alert.vercel.app/blogs/${response.data.slug}`;
 
     return {
         title,
@@ -174,7 +174,7 @@ export default async function IndividualBlogPost({ params }: { params: { id: str
             name: 'ScamAlert',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://www.ScamAlert.in/path/to/logo.png',
+                url: 'https://scams-alert.vercel.app/path/to/logo.png',
             },
         },
     };

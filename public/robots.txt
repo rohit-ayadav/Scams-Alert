@@ -11,7 +11,7 @@ Disallow: /edit/
 Disallow: /api/
 Disallow: /unauthorized/
 # Host
-Host: https://www.ScamAlert.in
+Host: https://scams-alert.vercel.app
 
 # Sitemaps
-Sitemap: https://www.ScamAlert.in/sitemap.xml
+Sitemap: https://scams-alert.vercel.app/sitemap.xml

@@ -16,8 +16,8 @@ const sendOTP = async ({
     userName,
     companyInfo = {
         name: 'ScamAlert',
-        logo: 'https://www.ScamAlert.in/logo.png',
-        website: 'https://www.ScamAlert.in',
+        logo: 'https://scams-alert.vercel.app/logo.png',
+        website: 'https://scams-alert.vercel.app',
         supportEmail: 'support@ScamAlert.com'
     }
 }: SendOTPParams) => {
