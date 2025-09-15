@@ -415,7 +415,7 @@ const UserManagement: React.FC = () => {
                                                         Edit
                                                     </DropdownMenuItem>
                                                     <DropdownMenuItem
-                                                        onClick={() => alert('Delete user')}
+                                                        onClick={() => alert('Coming soon!')}
                                                     >
                                                         <Trash2 className="h-4 w-4 mr-2" />
                                                         Delete
