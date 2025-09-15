@@ -168,7 +168,7 @@ export const EditorSection = ({
                         onValueChange={(value) => setEditorMode(value as 'markdown' | 'visual')}
                         className="w-full"
                     >
-                        <TabsList className="grid grid-cols-3 mb-4">
+                        <TabsList className="grid grid-cols-2 mb-4">
                             {['markdown', 'visual'].map((mode) => (
                                 <TabsTrigger
                                     key={mode}

@@ -26,8 +26,8 @@ const AuthorPosts = ({ author, posts, isDarkMode, error, loading }: AuthorPostsP
         <div className={`space-y-4 ${isDarkMode ? 'dark' : ''}`}>
             {/* Author Header */}
             <div className="flex items-center gap-3 mb-4">
-                <div 
-                    className="flex-shrink-0 cursor-pointer" 
+                <div
+                    className="flex-shrink-0 cursor-pointer"
                     onClick={() => window.location.href = `/author/${author?.username}`}
                 >
                     {author?.image ? (
@@ -73,7 +73,7 @@ const AuthorPosts = ({ author, posts, isDarkMode, error, loading }: AuthorPostsP
                     </p>
                 )}
                 {posts.slice(0, 5).map((post) => (
-                    <Link href={`/blogs/${post.slug}`} key={post._id} className="group block">
+                    <Link href={`/reports/${post.slug}`} key={post._id} className="group block">
                         <article className={`flex gap-4 p-3 rounded-lg transition-colors ${isDarkMode ? 'hover:bg-gray-700/50' : 'hover:bg-gray-100'}`}>
                             {post.thumbnail && (
                                 <div className="relative flex-shrink-0 w-20 h-20 rounded-md overflow-hidden">

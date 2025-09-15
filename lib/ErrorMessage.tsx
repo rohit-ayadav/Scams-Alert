@@ -69,7 +69,7 @@ const ErrorMessage = ({
                             asChild
                             className={isDarkMode ? 'bg-blue-600 hover:bg-blue-700' : ''}
                         >
-                            <Link href={customHomePath || "/blogs"}>
+                            <Link href={customHomePath || "/reports"}>
                                 <Home className="mr-2 h-4 w-4" />
                                 Return to Home
                             </Link>

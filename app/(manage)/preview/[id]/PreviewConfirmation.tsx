@@ -20,7 +20,7 @@ const PreviewConfirmation = ({ id }: { id: string }) => {
     const publish = () => {
         publishBlog(id).then((res) => {
             if (res.error === "") {
-                router.push(`/blogs/${id}`);
+                router.push(`/reports/${id}`);
             } else {
                 alert(res.error);
             }
@@ -41,7 +41,7 @@ const PreviewConfirmation = ({ id }: { id: string }) => {
 
                 <CardContent className={`mt-6 rounded-lg shadow-lg overflow-hidden border ${isDarkMode ? 'border-gray-700' : 'border-gray-300'}`}>
                     <iframe
-                        src={`/blogs/${id}`}
+                        src={`/reports/${id}`}
                         className={`w-full ${mobileView ? 'h-[500px] max-w-sm' : 'h-[700px]'}`}
                         frameBorder="0"
                     ></iframe>

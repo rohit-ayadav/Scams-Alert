@@ -9,7 +9,7 @@ import BlogPostFooter from '../BlogPostFooter/page';
 import { useTheme } from '@/context/ThemeContext';
 import { incrementView } from '@/lib/viewIncrement';
 import CommentSection from '@/app/_component/CommentComponent/Comment';
-import RC from '@/app/blogs/components/RC';
+import RC from '@/app/reports/components/RC';
 import MarkdownContent from '../ShowMD/MarkDownContent';
 
 const SKELETON_COUNT = 3;

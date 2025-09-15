@@ -177,7 +177,7 @@ function CreateBlogComponent() {
                 if (state.status === 'draft')
                     router.push(`/dashboard?tab=posts`);
                 else
-                    router.push(`/blogs/${data.data.id}`);
+                    router.push(`/reports/${data.data.id}`);
             } catch (error) {
                 const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
                 updateState({ error: errorMessage });

@@ -68,7 +68,7 @@ const ApproveBlog = async (blogId: string, sendNotification: boolean, status: st
                         icon: "/favicon.ico",
                         tag: "new-blog-post",
                         data: {
-                            url: `/blogs/${blog.slug}`
+                            url: `/reports/${blog.slug}`
                         },
                         actions: [
                             { action: "open", title: "Open" },

@@ -89,10 +89,10 @@ async function likePost(id: string): Promise<InteractionResult> {
             console.warn('Monthly stats update failed for post:', post._id);
         }
 
-        revalidatePath(`/blogs/${post.slug}`);
-        revalidatePath(`/blogs/${post._id}`);
+        revalidatePath(`/reports/${post.slug}`);
+        revalidatePath(`/reports/${post._id}`);
         revalidatePath(`/`);
-        revalidatePath(`/blogs`);
+        revalidatePath(`/reports`);
         return {
             success: true,
             likes: post.likes,
@@ -156,10 +156,10 @@ async function dislikePost(id: string): Promise<InteractionResult> {
             console.warn('Monthly stats update failed for post:', post._id);
         }
         // Revalidate the cache for the post and homepage so the updated likes are shown
-        revalidatePath(`/blogs/${post.slug}`);
-        revalidatePath(`/blogs/${post._id}`);
+        revalidatePath(`/reports/${post.slug}`);
+        revalidatePath(`/reports/${post._id}`);
         revalidatePath(`/`);
-        revalidatePath(`/blogs`);
+        revalidatePath(`/reports`);
 
 
         return {

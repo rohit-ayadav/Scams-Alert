@@ -102,14 +102,14 @@ export const TitleSection: React.FC<TitleSectionProps> = ({
             <CardContent className="space-y-3 sm:space-y-4 px-3 sm:px-6">
                 <div className="grid w-full items-center gap-2">
                     <Label htmlFor="blog-title" className="text-sm">
-                        Enter your blog title
+                        Enter your report title
                     </Label>
 
                     <Input
                         id="blog-title"
                         value={title}
                         onChange={handleTitleChange}
-                        placeholder="Enter the blog title"
+                        placeholder="Enter the report title"
                         maxLength={maxLength}
                         className={cn(
                             "w-full text-base sm:text-lg",

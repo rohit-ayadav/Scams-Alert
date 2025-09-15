@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
           icon: "/favicon.ico",
           tag: "new-blog-post",
           data: {
-            url: `/blogs/${slug}`
+            url: `/reports/${slug}`
           },
           actions: [
             { action: "open", title: "Open" },
@@ -109,8 +109,8 @@ export async function POST(request: NextRequest) {
     }
 
     revalidatePath("/");
-    revalidatePath(`/blogs/${slug}`);
-    revalidatePath(`/blogs`);
+    revalidatePath(`/reports/${slug}`);
+    revalidatePath(`/reports`);
     return NextResponse.json({ message: "Report post created successfully", success: true, data: { id: blogPostId } }, { status: 201 });
   } catch (error) {
     console.error("Error saving blog post:", error);

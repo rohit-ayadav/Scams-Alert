@@ -3,7 +3,7 @@
     "name": "Scam Alert",
     "short_name": "DevBlog",
     "description": "Your go-to platform for tech blogs, coding tutorials, and developer insights. Join the global dev community to read, write, and share knowledge.",
-    "start_url": "/blogs",
+    "start_url": "/reports",
     "scope": "/",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",
@@ -177,7 +177,7 @@
             "name": "Dashboard",
             "short_name": "Dashboard",
             "description": "View your dashboard",
-            "url": "/blogs?source=pwa",
+            "url": "/reports?source=pwa",
             "icons": [
                 {
                     "src": "/icons/all-blogs-96x96.png",
@@ -228,7 +228,7 @@
     "protocol_handlers": [
         {
             "protocol": "web+devblog",
-            "url": "/blogs/%s"
+            "url": "/reports/%s"
         }
     ],
     "display_features": [

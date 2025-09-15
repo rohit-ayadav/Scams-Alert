@@ -110,7 +110,7 @@ const AboutPage = () => {
                   Start Writing <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button size="lg" variant="outline" className="rounded-md border-gray-300 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
-                  onClick={() => window.location.href = "/blogs"}
+                  onClick={() => window.location.href = "/reports"}
                 >
                   Explore Reports
                 </Button>

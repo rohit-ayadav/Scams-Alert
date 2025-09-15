@@ -22,7 +22,7 @@ const NotificationAdminPanel = () => {
         requireInteraction: true,
         renotify: false,
         silent: false,
-        url: "https://scams-alert.vercel.app/blogs"
+        url: "https://scams-alert.vercel.app/reports"
     });
 
     const handleInputChange = (

@@ -42,7 +42,7 @@ export async function generateMetadata({
   imageUrl?: string;
   canonicalUrl?: string;
 }): Promise<Metadata> {
-  const fullUrl = `${canonicalUrl}/blogs/${slug}`;
+  const fullUrl = `${canonicalUrl}/reports/${slug}`;
 
   return {
     title,

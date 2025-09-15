@@ -148,10 +148,10 @@ async function postComment({ body }: { body: { postId: string, email: string, co
                 createdAt: newComment.createdAt
             }
         ]
-        revalidatePath(`/blogs/${post.slug}`);
-        revalidatePath(`/blogs/${post._id}`);
+        revalidatePath(`/reports/${post.slug}`);
+        revalidatePath(`/reports/${post._id}`);
         revalidatePath(`/`);
-        revalidatePath(`/blogs`);
+        revalidatePath(`/reports`);
         response.error = '';
         const serializeResponse = serializeDocument(response);
         response = serializeResponse;
@@ -183,11 +183,11 @@ async function deleteComment(id: string) {
         }
 
         if (post) {
-            revalidatePath(`/blogs/${post.slug}`);
-            revalidatePath(`/blogs/${post._id}`);
+            revalidatePath(`/reports/${post.slug}`);
+            revalidatePath(`/reports/${post._id}`);
         }
         revalidatePath(`/`);
-        revalidatePath(`/blogs`);
+        revalidatePath(`/reports`);
         response.comments = [comment];
         const serializeResponse = serializeDocument(response);
         return response = serializeResponse;
@@ -222,11 +222,11 @@ async function updateComment({ body }: { body: { id: string, email: string, cont
             post = await Blog.findOne({ slug: comment.postId });
         }
         if (post) {
-            revalidatePath(`/blogs/${post.slug}`);
-            revalidatePath(`/blogs/${post._id}`);
+            revalidatePath(`/reports/${post.slug}`);
+            revalidatePath(`/reports/${post._id}`);
         }
         revalidatePath(`/`);
-        revalidatePath(`/blogs`);
+        revalidatePath(`/reports`);
         response.comments = [comment];
         const serializeResponse = serializeDocument(response);
         return response = serializeResponse;

@@ -27,7 +27,7 @@ const SignOutPage = () => {
                 redirect: false,
                 callbackUrl: '/login',
             });
-            router.push('/blogs');
+            router.push('/reports');
         } catch (error) {
             console.error('Error signing out:', error);
         } finally {
@@ -90,8 +90,8 @@ const SignOutPage = () => {
                         variant="outline"
                         onClick={handleCancel}
                         className={`w-full sm:w-1/2 ${isDarkMode
-                                ? 'border-gray-700 hover:bg-gray-700 text-white'
-                                : 'border-gray-300 hover:bg-gray-100 text-gray-800'
+                            ? 'border-gray-700 hover:bg-gray-700 text-white'
+                            : 'border-gray-300 hover:bg-gray-100 text-gray-800'
                             }`}
                     >
                         Cancel

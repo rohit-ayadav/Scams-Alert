@@ -308,7 +308,7 @@ export const PostCard = ({ post, showStats = false, refreshData }: PostCardProps
                                     <DropdownMenuGroup>
                                         {!isRejected && !isDraft && (
                                             <DropdownMenuItem asChild>
-                                                <Link href={`/blogs/${post.slug}`} className="flex items-center cursor-pointer">
+                                                <Link href={`/reports/${post.slug}`} className="flex items-center cursor-pointer">
                                                     <Eye className="mr-2 h-4 w-4" />
                                                     <span>View Post</span>
                                                 </Link>

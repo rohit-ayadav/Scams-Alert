@@ -48,7 +48,7 @@ const RelatedPosts = ({ posts, isDarkMode, error, loading }: RelatedPostsProps) 
         )}
         {posts.slice(0, 5).map((post) => (
           <Link
-            href={`/blogs/${post.slug}`}
+            href={`/reports/${post.slug}`}
             key={post._id}
             className="group block"
           >
@@ -110,7 +110,7 @@ const RelatedPosts = ({ posts, isDarkMode, error, loading }: RelatedPostsProps) 
 
       {posts.length > 5 && (
         <Link
-          href={`/blogs?category=${encodeURIComponent(posts[0].category.toString())}`}
+          href={`/reports?category=${encodeURIComponent(posts[0].category.toString())}`}
           className={`
             inline-flex items-center text-sm transition-colors
             ${isDarkMode

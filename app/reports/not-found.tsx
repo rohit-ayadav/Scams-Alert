@@ -1,4 +1,4 @@
-// app/blogs/not-found.tsx
+// app/reports/not-found.tsx
 "use client";
 import { useTheme } from '@/context/ThemeContext';
 import { ChevronLeft, BookOpen, Home } from 'lucide-react';
@@ -31,7 +31,7 @@ export default function NotFound() {
                             Go Back
                         </button>
 
-                        <Link href="/blogs" className={`px-4 py-2 rounded-lg transition-colors flex items-center gap-2
+                        <Link href="/reports" className={`px-4 py-2 rounded-lg transition-colors flex items-center gap-2
                             ${isDarkMode
                                 ? 'bg-amber-600 hover:bg-amber-700 text-gray-100'
                                 : 'bg-yellow-500 hover:bg-yellow-600 text-white'}`}>

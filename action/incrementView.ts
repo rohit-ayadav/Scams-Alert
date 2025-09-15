@@ -52,8 +52,8 @@ export default async function incrementViewInDB(blogId: string, like?: boolean, 
                     });
                 }
             }
-            revalidatePath(`/blogs/${blog.slug}`);
-            revalidatePath(`/blogs`);
+            revalidatePath(`/reports/${blog.slug}`);
+            revalidatePath(`/reports`);
             revalidatePath(`/author/${blog.createdBy}`);
             revalidatePath(`/author`);
             revalidatePath(`/`);

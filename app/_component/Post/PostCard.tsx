@@ -100,8 +100,8 @@ export const PostCard = ({ post, user, showActions = false, author }: BlogPostCa
         e.stopPropagation();
 
         const formattedDate = formatDate(post.createdAt);
-        // const text = `Read this amazing blog post titled "${post.title}" by ${author?.name || user?.name || 'Anonymous'} on ${formattedDate}\n\nRead more at ${window.location.origin}/blogs/${slug}`;
-        const text = `${post.title}\nRead here: ${window.location.origin}/blogs/${slug}`;
+        // const text = `Read this amazing blog post titled "${post.title}" by ${author?.name || user?.name || 'Anonymous'} on ${formattedDate}\n\nRead more at ${window.location.origin}/reports/${slug}`;
+        const text = `${post.title}\nRead here: ${window.location.origin}/reports/${slug}`;
         if (navigator.clipboard) {
             navigator.clipboard.writeText(text);
             toast.success('Link copied to clipboard');
@@ -140,7 +140,7 @@ export const PostCard = ({ post, user, showActions = false, author }: BlogPostCa
         if (!window.confirm('Are you sure you want to delete this post?')) return;
 
         try {
-            const response = await fetch(`/api/blogs/${id}`, {
+            const response = await fetch(`/api/reports/${id}`, {
                 method: 'DELETE',
             });
 
@@ -161,7 +161,7 @@ export const PostCard = ({ post, user, showActions = false, author }: BlogPostCa
     return (
         <Card className={`h-full overflow-hidden flex flex-col transition-all duration-300 hover:shadow-md ${isDarkMode ? 'dark bg-zinc-900 hover:shadow-zinc-800 border-zinc-800' : 'bg-white hover:shadow-gray-200 border-gray-200'} group`}>
             <Link
-                href={post.category === 'Tech-news' ? `/tech-news/${post.slug}` : `/blogs/${post.slug}`}
+                href={post.category === 'Tech-news' ? `/tech-news/${post.slug}` : `/reports/${post.slug}`}
                 className="flex-1 flex flex-col group relative"
                 title={`Read "${post.title}"`}
             >

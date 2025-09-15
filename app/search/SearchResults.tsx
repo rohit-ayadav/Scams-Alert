@@ -71,7 +71,7 @@ function BlogResult({ result }: { result: any }) {
     const { isDarkMode } = useTheme();
 
     return (
-        <Link href={`/blogs/${result.slug}`}>
+        <Link href={`/reports/${result.slug}`}>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                 {result.thumbnail && (
                     <div className="flex-shrink-0 w-full sm:w-auto">

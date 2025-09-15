@@ -103,7 +103,7 @@ function EditBlogComponent({ BlogData }: { BlogData: EditBlogState }) {
         }
         updateState({ isLoading: false });
         toast.success(`${response.message}`);
-        router.push(`/blogs/${state.slug}`);
+        router.push(`/reports/${state.slug}`);
 
     };
     // Loading state component

@@ -87,9 +87,9 @@ export async function POST(req: NextRequest, res: NextResponse) {
       data: {
         type: "welcome",
         timestamp: Date.now(),
-        url: "/blogs"
+        url: "/reports"
       },
-      url: "/blogs",
+      url: "/reports",
       ttl: 86400, // 24 hours
       urgency: "normal",
       renotify: false,

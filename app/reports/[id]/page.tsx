@@ -1,4 +1,4 @@
-// app/blogs/[id]/page.tsx
+// app/reports/[id]/page.tsx
 import React from 'react';
 import BlogPostLayout from '@/components/BlogPostLayout/page';
 import { Metadata } from 'next';
@@ -100,7 +100,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     const title = postData?.title || 'ScamAlert Report Post';
     const thumbnailUrl = postData?.thumbnail || '/default-thumbnail.png';
     const description = postData?.content.replace(/<[^>]*>?/gm, '').substring(0, 140);
-    const url = `https://scams-alert.vercel.app/blogs/${response.data.slug}`;
+    const url = `https://scams-alert.vercel.app/reports/${response.data.slug}`;
 
     return {
         title,

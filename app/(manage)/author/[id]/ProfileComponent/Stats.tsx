@@ -6,7 +6,7 @@ import { BlogPostType } from '@/types/blogs-types';
 import { Author } from './ProfileNew';
 
 
-const StatsAuthorPage = ({authorPosts, totalStats, categories}: {authorPosts: BlogPostType[], author: Author, totalStats: {views: number, likes: number}, categories: string[]}) => {
+const StatsAuthorPage = ({ authorPosts, totalStats, categories }: { authorPosts: BlogPostType[], author: Author, totalStats: { views: number, likes: number }, categories: string[] }) => {
     return (
         <div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -88,7 +88,7 @@ const StatsAuthorPage = ({authorPosts, totalStats, categories}: {authorPosts: Bl
                                             <tr key={post._id} className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
                                                 <td className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                                                     <Link
-                                                        href={`/blogs/${post._id}`}
+                                                        href={`/reports/${post._id}`}
                                                         className="hover:text-blue-600 dark:hover:text-blue-400"
                                                     >
                                                         {post.title}

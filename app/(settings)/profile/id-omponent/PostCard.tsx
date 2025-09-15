@@ -7,7 +7,7 @@ export const PostCard = ({ post }: { post: BlogPostType }) => {
     const readingTime = Math.ceil(post.content.split(/\s+/).length / 200);
 
     return (
-        <Link href={`/blogs/${post._id}`}>
+        <Link href={`/reports/${post._id}`}>
             <div className="border p-4 rounded-lg hover:shadow-md transition-all duration-300 h-full flex flex-col justify-between group bg-white dark:bg-gray-800">
                 {post.thumbnail && (
                     <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">

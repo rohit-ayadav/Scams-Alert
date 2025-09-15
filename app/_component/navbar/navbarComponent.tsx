@@ -60,7 +60,7 @@ export const Navbar = () => {
 
   const navLinks = [
     { href: '/', label: 'Home', icon: Layout },
-    { href: '/blogs', label: 'Scam Reports', icon: AlertTriangle },
+    { href: '/reports', label: 'Scam Reports', icon: AlertTriangle },
     { href: '/create', label: 'Write', icon: Edit3 },
     { href: '/dashboard', label: 'Dashboard', icon: Code },
     { href: '/resources', label: 'Safety Guide', icon: BookOpen },

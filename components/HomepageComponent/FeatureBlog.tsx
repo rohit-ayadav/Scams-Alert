@@ -50,7 +50,7 @@ const FeatureBlog = ({ posts, users, isDarkMode }: { posts: BlogPostType[], user
                                 Hand-picked articles from our top contributors that shouldn't be missed
                             </p>
                         </div>
-                        <Link href={"/blogs"}>
+                        <Link href={"/reports"}>
                             <Button
                                 variant="default"
                                 className={cn(
@@ -116,7 +116,7 @@ const FeatureBlog = ({ posts, users, isDarkMode }: { posts: BlogPostType[], user
                     {/* Load more button (only shown when there are more than 3 posts) */}
                     {posts.length > 3 && (
                         <div className="mt-12 text-center">
-                            <Link href={"/blogs"}>
+                            <Link href={"/reports"}>
                                 <Button
                                     variant="outline"
                                     size="lg"

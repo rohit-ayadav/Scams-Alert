@@ -11,7 +11,7 @@ const CategoryBrowser = () => {
     const router = useRouter();
 
     // Add icons to scam categories with color variants
-    
+
     const CATEGORIES_WITH_ICONS = [
         {
             value: "job",
@@ -89,7 +89,7 @@ const CategoryBrowser = () => {
 
 
     const handleCategoryClick = (category: string) => {
-        router.push(`/blogs?category=${category}`);
+        router.push(`/reports?category=${category}`);
     };
 
     // Container animations

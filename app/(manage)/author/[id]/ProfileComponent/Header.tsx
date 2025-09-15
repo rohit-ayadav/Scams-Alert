@@ -38,7 +38,7 @@ const Header = ({ author, isDarkMode, toggleDarkMode, isShareSheetOpen, setIsSha
     return (
         <header className="flex justify-between items-center gap-2 mb-3 sm:mb-6">
             <nav className="flex items-center gap-1 sm:gap-4 overflow-hidden">
-                <Link href="/blogs">
+                <Link href="/reports">
                     <Button
                         variant="ghost"
                         size="icon"
@@ -48,7 +48,7 @@ const Header = ({ author, isDarkMode, toggleDarkMode, isShareSheetOpen, setIsSha
                     </Button>
                 </Link>
                 <div className="breadcrumbs text-xs sm:text-sm flex overflow-hidden whitespace-nowrap">
-                    <Link href="/blogs" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 flex-shrink-0">
+                    <Link href="/reports" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 flex-shrink-0">
                         Reports
                     </Link>
                     <span className="mx-1 sm:mx-2 text-gray-400 flex-shrink-0">/</span>

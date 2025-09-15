@@ -1,7 +1,7 @@
 const BlogApproved = (name: string, blogTitle: string, blogUrl: string): string => {
     const authorName = name || "Author";
     const BlogTitle = blogTitle || "Your Report Title";
-    const BlogUrl = blogUrl || "https://ScamAlert.in/blogs";
+    const BlogUrl = blogUrl || "https://ScamAlert.in/reports";
     const currentYear = new Date().getFullYear();
 
     return `<!DOCTYPE html>

@@ -147,7 +147,7 @@ const Footer = () => {
                   {[
                     // ['Home', '/'],
                     ['About', '/about'],
-                    ['Reports', '/blogs'],
+                    ['Reports', '/reports'],
                     ['Write', '/create'],
                     ['Contact', '/contacts'],
                   ].map(([title, url]) => (

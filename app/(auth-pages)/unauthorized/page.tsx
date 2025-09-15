@@ -22,8 +22,8 @@ export default function UnauthorizedPage() {
         <div className={`flex items-center justify-center min-h-screen p-4 transition-colors duration-200 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'
             }`}>
             <Card className={`w-full max-w-md shadow-md ${isDarkMode
-                    ? 'bg-gray-800 border-gray-700 text-white'
-                    : 'bg-white border-gray-200 text-gray-900'
+                ? 'bg-gray-800 border-gray-700 text-white'
+                : 'bg-white border-gray-200 text-gray-900'
                 }`}>
                 <CardHeader className="space-y-1">
                     <div className="mx-auto mb-4 p-3 rounded-full bg-red-100 dark:bg-red-900/30">
@@ -69,8 +69,8 @@ export default function UnauthorizedPage() {
                         variant="outline"
                         onClick={() => router.back()}
                         className={`w-full sm:w-1/2 ${isDarkMode
-                                ? 'border-gray-700 hover:bg-gray-700 text-white'
-                                : 'border-gray-300 hover:bg-gray-100 text-gray-800'
+                            ? 'border-gray-700 hover:bg-gray-700 text-white'
+                            : 'border-gray-300 hover:bg-gray-100 text-gray-800'
                             }`}
                     >
                         <ArrowLeft className="h-4 w-4 mr-2" />
@@ -79,12 +79,12 @@ export default function UnauthorizedPage() {
 
                     <Button
                         className={`w-full sm:w-1/2 ${isDarkMode
-                                ? 'bg-indigo-600 hover:bg-indigo-700'
-                                : 'bg-indigo-600 hover:bg-indigo-700'
+                            ? 'bg-indigo-600 hover:bg-indigo-700'
+                            : 'bg-indigo-600 hover:bg-indigo-700'
                             }`}
                         asChild
                     >
-                        <Link href="/blogs">
+                        <Link href="/reports">
                             <Home className="h-4 w-4 mr-2" />
                             Return to Home
                         </Link>

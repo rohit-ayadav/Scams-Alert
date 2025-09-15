@@ -113,12 +113,12 @@ export async function updateBlog(Post: UpdatePostType) {
 
         await blog.save();
         revalidatePath('/edit');
-        revalidatePath(`/blogs/${blog.slug}`);
+        revalidatePath(`/reports/${blog.slug}`);
         revalidatePath(`/edit/${blog.slug}`);
-        revalidatePath(`/blogs/${blog._id.toString()}`);
+        revalidatePath(`/reports/${blog._id.toString()}`);
         revalidatePath(`/edit/${blog._id}`);
         revalidatePath(`/`);
-        revalidatePath(`/blogs`);
+        revalidatePath(`/reports`);
 
         return {
             message: `Report post ${isUpdatedByAdmin ? `updated by admin ${session.user.name}` : "updated"} successfully`,
@@ -152,9 +152,9 @@ export async function publishBlog(id: string) {
         blog.status = "published";
         await blog.save();
         revalidatePath('/edit');
-        revalidatePath(`/blogs/${blog.slug}`);
+        revalidatePath(`/reports/${blog.slug}`);
         revalidatePath(`/edit/${blog.slug}`);
-        revalidatePath(`/blogs/${blog._id.toString()}`);
+        revalidatePath(`/reports/${blog._id.toString()}`);
         return {
             message: "Report post published successfully",
             error: ""

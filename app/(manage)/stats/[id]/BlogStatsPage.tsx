@@ -141,7 +141,7 @@ const BlogStatsPage = ({ user, data, monthlyStats }: { user: UserType, data: Blo
                     </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
-                    <Link href={`/blogs/${data.slug}`}>
+                    <Link href={`/reports/${data.slug}`}>
                         <Button variant="outline">
                             <ExternalLink className="h-4 w-4 mr-2" />
                             View Report

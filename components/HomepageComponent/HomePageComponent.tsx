@@ -482,7 +482,7 @@ const HomePage = ({ posts, users, totalLikes, totalViews, totalBlogs, totalUsers
                             title="Discover & Stay Protected"
                             description="Browse scam reports by category, location, and type. Learn about the latest fraud tactics before they reach you."
                             action="Explore Reports"
-                            link="/blogs"
+                            link="/reports"
                             isDarkMode={isDarkMode}
                         />
                         <FeatureCard
