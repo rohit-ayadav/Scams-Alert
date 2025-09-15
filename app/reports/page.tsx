@@ -87,7 +87,7 @@ const BlogCollectionComponent = () => {
     const fetchPosts = async () => {
         try {
             setState(prev => ({ ...prev, loading: true, error: null }));
-            const res = await fetch(`/api/reports?page=${state.page}&limit=${state.limit}&sortBy=${state.sortBy}&search=${state.searchTerm}&category=${state.category}&author=${state.author}&readingTime=${state.readingTime}&dateRange=${state.dateRange}&technews=${state.techNews}`);
+            const res = await fetch(`/api/blogs?page=${state.page}&limit=${state.limit}&sortBy=${state.sortBy}&search=${state.searchTerm}&category=${state.category}&author=${state.author}&readingTime=${state.readingTime}&dateRange=${state.dateRange}&technews=${state.techNews}`);
             const data: PostsData = await res.json();
 
             setState(prev => ({
