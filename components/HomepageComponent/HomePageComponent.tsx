@@ -395,7 +395,7 @@ const HomePage = ({ posts, users, totalLikes, totalViews, totalBlogs, totalUsers
                         </div>
 
                         <div className="mt-12 space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row justify-center">
-                            <Link href="/report" prefetch={false}>
+                            <Link href="/write" prefetch={false}>
                                 <Button
                                     size="lg"
                                     className={cn(
