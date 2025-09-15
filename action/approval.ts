@@ -175,7 +175,7 @@ export const handleFromUserDashboard = async (action: string, blogId: string) =>
                     error: null,
                 };
             case 'permanent-delete':
-                await Report.deleteOne({ _id: blog._id });
+                await Blog.deleteOne({ _id: blog._id });
                 return {
                     message: "Report permanently deleted successfully",
                     error: null,
