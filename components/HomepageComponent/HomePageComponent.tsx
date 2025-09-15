@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useRef, lazy, Suspense } from 'react';
+import React, { useEffect, useState, useRef, Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import { ToastContainer } from 'react-toastify';
 import { Button } from '@/components/ui/button';
@@ -7,8 +7,12 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import {
     PenTool, Book, Users, ChevronRight, Search,
-    TrendingUp, Star, Code, Terminal, Coffee
+    Star,
+    AlertTriangle,
+    ShieldCheck
 } from 'lucide-react';
+import { Briefcase, GraduationCap, CreditCard, ShoppingCart, Link2, Heart, Coins } from "lucide-react";
+
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { useTheme } from '@/context/ThemeContext';
@@ -69,15 +73,17 @@ const FeatureCard = ({ icon, title, description, action, link }: any) => {
 // Memoize static components for better performance
 const TrendingTopics = React.memo(() => {
     const { isDarkMode } = useTheme();
+
     const topics = [
-        { name: 'React', icon: <Code size={14} /> },
-        { name: 'TypeScript', icon: <Terminal size={14} /> },
-        { name: 'Web Dev', icon: <Coffee size={14} /> },
-        { name: 'AI', icon: <Star size={14} /> },
-        { name: 'DevOps', icon: <TrendingUp size={14} /> },
-        { name: 'Next.js', icon: <Code size={14} /> },
-        { name: 'UI/UX', icon: <PenTool size={14} /> }
+        { name: 'Job', icon: <Briefcase size={14} /> },
+        { name: 'Internship', icon: <GraduationCap size={14} /> },
+        { name: 'Loan', icon: <CreditCard size={14} /> },
+        { name: 'E-commerce', icon: <ShoppingCart size={14} /> },
+        { name: 'Phishing', icon: <Link2 size={14} /> },
+        { name: 'Romance', icon: <Heart size={14} /> },
+        { name: 'Crypto', icon: <Coins size={14} /> }
     ];
+
 
     return (
         <div className="flex gap-2 flex-wrap justify-center">
@@ -169,11 +175,10 @@ const StatsSection = React.memo(({ totalUsers, totalBlogs, totalLikes, totalView
         )}>
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                    {[
-                        { label: 'Active Writers', value: totalUsers, icon: <PenTool size={24} /> },
-                        { label: 'Articles Published', value: totalBlogs, icon: <Book size={24} /> },
-                        { label: 'Total Reactions', value: totalLikes, icon: <Star size={24} /> },
-                        { label: 'Monthly Readers', value: totalViews, icon: <Users size={24} /> }
+                    {[{ label: 'Total Reports', value: totalUsers, icon: <PenTool size={24} /> },
+                    { label: 'Reports Submitted', value: totalBlogs, icon: <Book size={24} /> },
+                    { label: 'Community Flags', value: totalLikes, icon: <Star size={24} /> },
+                    { label: 'Monthly Readers', value: totalViews, icon: <Users size={24} /> }
                     ].map((stat, index) => (
                         <Card
                             key={index}
@@ -282,7 +287,6 @@ const HomePage = ({ posts, users, totalLikes, totalViews, totalBlogs, totalUsers
                 };
             }
 
-
             const handleIntersection: IntersectionObserverCallback = (entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -358,7 +362,7 @@ const HomePage = ({ posts, users, totalLikes, totalViews, totalBlogs, totalUsers
                             transition={{
                                 repeat: Infinity,
                                 repeatType: "reverse",
-                                duration: Math.random() * 15 + 15, // Slower animations use less CPU
+                                duration: Math.random() * 15 + 15,
                             }}
                         />
                     ))}
@@ -377,35 +381,34 @@ const HomePage = ({ posts, users, totalLikes, totalViews, totalBlogs, totalUsers
                                 "bg-gradient-to-r from-blue-400 to-indigo-400" :
                                 "bg-gradient-to-r from-blue-600 to-indigo-600"
                         )}>
-                            Where Developers Share Knowledge
+                            Where People Share Scam Experiences
                         </h1>
                         <p className={cn(
                             "text-xl mb-8 max-w-3xl mx-auto",
                             isDarkMode ? "text-gray-300" : "text-gray-600"
                         )}>
-                            Join our thriving community of developers. Share insights, learn from peers,
-                            and stay ahead in the tech world.
+                            Join ScamAlert to report scams, learn from real experiences, and help protect the community from fraudsters.
                         </p>
                         <SearchSection />
                         <div className="mt-8">
-                            <TrendingTopics />
+                            <TrendingTopics /> {/* Make sure topics now use scam-related tags */}
                         </div>
 
                         <div className="mt-12 space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row justify-center">
-                            <Link href="/create" prefetch={false}>
+                            <Link href="/report" prefetch={false}>
                                 <Button
                                     size="lg"
                                     className={cn(
                                         "w-full sm:w-auto transition-all",
                                         isDarkMode ?
-                                            "bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600" :
-                                            "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+                                            "bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600" :
+                                            "bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700"
                                     )}
                                 >
-                                    Start Writing <PenTool className="ml-2 h-4 w-4" />
+                                    Submit Report <AlertTriangle className="ml-2 h-4 w-4" />
                                 </Button>
                             </Link>
-                            <Link href="/blogs" prefetch={false}>
+                            <Link href="/reports" prefetch={false}>
                                 <Button
                                     size="lg"
                                     variant="outline"
@@ -446,14 +449,16 @@ const HomePage = ({ posts, users, totalLikes, totalViews, totalBlogs, totalUsers
             )}
 
             {/* Why ScamAlert - Priority 1 */}
-            <section className={cn(
-                "py-16",
-                isDarkMode ? "bg-gray-900" : "bg-white"
-            )}>
+            <section
+                className={cn(
+                    "py-16",
+                    isDarkMode ? "bg-gray-900" : "bg-white"
+                )}
+            >
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
                         <h2 className="text-3xl font-bold">Why ScamAlert?</h2>
-                        <Link href="/services">
+                        <Link href="/about">
                             <Button
                                 variant="default"
                                 className={isDarkMode ? "bg-blue-600 hover:bg-blue-700" : ""}
@@ -465,26 +470,26 @@ const HomePage = ({ posts, users, totalLikes, totalViews, totalBlogs, totalUsers
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
                         <FeatureCard
-                            icon={<PenTool size={48} className={cn("text-blue-500", isDarkMode && "text-blue-400")} />}
-                            title="Build Your Tech Portfolio"
-                            description="Create a professional developer profile that showcases your skills to recruiters. 78% of our active users report interview opportunities within 3 months."
-                            action="Create Your Portfolio"
-                            link="/create"
+                            icon={<AlertTriangle size={48} className={cn("text-red-500", isDarkMode && "text-red-400")} />}
+                            title="Share Your Scam Experience"
+                            description="Report scams in a safe, blog-style format. Help others stay alert by sharing your story, evidence, and lessons learned."
+                            action="Submit a Report"
+                            link="/write"
                             isDarkMode={isDarkMode}
                         />
                         <FeatureCard
-                            icon={<Book size={48} className={cn("text-green-500", isDarkMode && "text-green-400")} />}
-                            title="Get Discovered By Employers"
-                            description="Our SEO-optimized platform helps your content rank higher. Developers on ScamAlert are 3x more likely to be found by hiring managers."
-                            action="Start Getting Noticed"
+                            icon={<Search size={48} className={cn("text-green-500", isDarkMode && "text-green-400")} />}
+                            title="Discover & Stay Protected"
+                            description="Browse scam reports by category, location, and type. Learn about the latest fraud tactics before they reach you."
+                            action="Explore Reports"
                             link="/blogs"
                             isDarkMode={isDarkMode}
                         />
                         <FeatureCard
-                            icon={<Users size={48} className={cn("text-purple-500", isDarkMode && "text-purple-400")} />}
-                            title="Access Exclusive Opportunities"
-                            description="Join 50,000+ developers receiving personalized job alerts and access to private tech events. Members report 40% higher interview success rates."
-                            action="Join Now - It's Free"
+                            icon={<ShieldCheck size={48} className={cn("text-blue-500", isDarkMode && "text-blue-400")} />}
+                            title="Build a Safer Community"
+                            description="Join thousands of people helping to expose scams. Together, we make the internet a safer place for everyone."
+                            action="Join Our Community"
                             link="https://whatsapp.com/channel/0029VaVd6px8KMqnZk7qGJ2t"
                             isDarkMode={isDarkMode}
                             isExternal={true}
