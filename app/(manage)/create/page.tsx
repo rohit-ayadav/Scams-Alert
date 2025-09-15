@@ -223,7 +223,7 @@ function CreateBlogComponent() {
                     clearForm={clearForm}
                 />
 
-                <div className="text-center py-4">
+                {/* <div className="text-center py-4">
                     <p
                         className={cn(
                             "text-sm",
@@ -251,7 +251,7 @@ function CreateBlogComponent() {
                             content guidelines
                         </a>.
                     </p>
-                </div>
+                </div> */}
             </div>
         </div>
     );

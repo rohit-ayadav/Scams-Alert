@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'; // Assuming you have this utility
 import PostCard from '@/app/_component/Post/PostCard';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const FeatureBlog = ({ posts, users, isDarkMode, isTechNews }: { posts: BlogPostType[], users: UserType[], isDarkMode: boolean, isTechNews: boolean }) => {
+const FeatureBlog = ({ posts, users, isDarkMode }: { posts: BlogPostType[], users: UserType[], isDarkMode: boolean, }) => {
     return (
         <div>
             {/* Featured Posts Section */}
@@ -37,7 +37,7 @@ const FeatureBlog = ({ posts, users, isDarkMode, isTechNews }: { posts: BlogPost
                                 Must Read
                             </span>
                             <h2 className="text-3xl font-bold">
-                                {isTechNews ? "Latest in Tech News" : "Featured Posts"}                                {/* Animated underline */}
+                                {"Featured Scams"}                                {/* Animated underline */}
                                 <span className={cn(
                                     "ml-2 inline-block w-10 h-1 rounded",
                                     isDarkMode ? "bg-blue-500" : "bg-blue-600"
@@ -50,7 +50,7 @@ const FeatureBlog = ({ posts, users, isDarkMode, isTechNews }: { posts: BlogPost
                                 Hand-picked articles from our top contributors that shouldn't be missed
                             </p>
                         </div>
-                        <Link href={isTechNews ? "/tech-news" : "/blogs"}>
+                        <Link href={"/blogs"}>
                             <Button
                                 variant="default"
                                 className={cn(
@@ -61,7 +61,7 @@ const FeatureBlog = ({ posts, users, isDarkMode, isTechNews }: { posts: BlogPost
                                 )}
                             >
                                 <span className="relative z-10 flex items-center">
-                                    {isTechNews ? "View All Tech News" : "Explore More"}
+                                    {"Explore More"}
                                     <ChevronRight className={cn(
                                         "ml-1 h-4 w-4 transition-transform duration-300",
                                         "group-hover:translate-x-1"
@@ -116,7 +116,7 @@ const FeatureBlog = ({ posts, users, isDarkMode, isTechNews }: { posts: BlogPost
                     {/* Load more button (only shown when there are more than 3 posts) */}
                     {posts.length > 3 && (
                         <div className="mt-12 text-center">
-                            <Link href={isTechNews ? "/tech-news" : "/blogs"}>
+                            <Link href={"/blogs"}>
                                 <Button
                                     variant="outline"
                                     size="lg"
@@ -127,7 +127,7 @@ const FeatureBlog = ({ posts, users, isDarkMode, isTechNews }: { posts: BlogPost
                                             "hover:bg-gray-100"
                                     )}
                                 >
-                                    {isTechNews ? "View All Tech News" : "Explore More"}
+                                    {"Explore More"}
                                 </Button>
                             </Link>
                         </div>

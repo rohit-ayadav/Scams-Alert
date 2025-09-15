@@ -24,8 +24,6 @@ const FeaturedAuthors = dynamic(() => import('./FeaturedAuthors'), { ssr: false 
 const CategoryBrowser = dynamic(() => import('./CategoryBrowser'));
 const NewsletterSection = dynamic(() => import('./NewsletterSection').then(mod => mod.NewsletterSection));
 const RecentActivityFeed = dynamic(() => import('@/app/(manage)/author/RecentActivityFeed'));
-const ContentToolsSection = dynamic(() => import('./ContentToolsSection'));
-const TopCheatsheetsSection = dynamic(() => import('./TopCheatSheet'));
 const FeatureBlog = dynamic(() => import('./FeatureBlog'));
 
 
@@ -437,22 +435,13 @@ const HomePage = ({ posts, users, techNewsPosts, totalLikes, totalViews, totalBl
             {/* Featured Report - Priority 1 */}
             {loadPriority1 && (
                 <Suspense fallback={<SectionLoading />}>
-                    <FeatureBlog posts={posts} users={users} isDarkMode={isDarkMode} isTechNews={false} />
+                    <FeatureBlog posts={posts} users={users} isDarkMode={isDarkMode} />
                 </Suspense>
             )}
 
-            {/* Top Cheatsheets - Priority 2 */}
-            <div data-lazysection="priority2">
-                {loadPriority2 ? (
-                    <Suspense fallback={<SectionLoading />}>
-                        <TopCheatsheetsSection />
-                    </Suspense>
-                ) : loadPriority1 ? <SectionLoading /> : null}
-            </div>
-
             {loadPriority1 && (
                 <Suspense fallback={<SectionLoading />}>
-                    <FeatureBlog posts={techNewsPosts} users={users} isDarkMode={isDarkMode} isTechNews={true} />
+                    <FeatureBlog posts={techNewsPosts} users={users} isDarkMode={isDarkMode} />
                 </Suspense>
             )}
             {/* Featured Authors - Priority 2 */}
@@ -513,11 +502,6 @@ const HomePage = ({ posts, users, techNewsPosts, totalLikes, totalViews, totalBl
             {/* Priority 3 sections - lower importance */}
             {loadPriority3 && (
                 <>
-                    {/* Content Tools Section */}
-                    <Suspense fallback={<SectionLoading />}>
-                        <ContentToolsSection />
-                    </Suspense>
-
                     {/* Newsletter Section */}
                     <Suspense fallback={<SectionLoading />}>
                         <NewsletterSection />

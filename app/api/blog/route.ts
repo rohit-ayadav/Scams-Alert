@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
     };
 
     // Save blog post
-    const newBlogPost = new Report(blogPost);
+    const newBlogPost = new Blog(blogPost);
     await newBlogPost.save();
     const blogPostId = newBlogPost.slug;
 
