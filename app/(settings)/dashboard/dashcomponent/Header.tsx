@@ -17,7 +17,7 @@ const Header = ({ user }: { user: UserType }) => {
                     <ShowProfileImage src={user.image} className="w-16 h-16 border-4 border-blue-100 dark:border-blue-900" size={16} />
                     <div>
                         <h1 className="text-3xl font-bold">{user.name}'s Dashboard</h1>
-                        <p className="text-gray-600 dark:text-gray-400">Manage and track your blog performance</p>
+                        <p className="text-gray-600 dark:text-gray-400">Manage and track your submitted scam reports</p>
                     </div>
                 </div>
                 <div className="flex gap-3">

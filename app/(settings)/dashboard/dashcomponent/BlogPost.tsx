@@ -221,7 +221,7 @@ const BlogPost = ({ initialBlogs, initialStats, parentRefreshTrigger }: BlogPost
                 </div>
                 <Button className="flex items-center gap-2" onClick={() => router.push('/create')}>
                     <PlusCircle size={16} />
-                    <span>Create New Post</span>
+                    <span>Submit New Report</span>
                 </Button>
             </div>
 

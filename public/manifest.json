@@ -150,9 +150,9 @@
     ],
     "shortcuts": [
         {
-            "name": "Create New Post",
-            "short_name": "New Post",
-            "description": "Start writing a new blog post",
+            "name": "Submit New Report",
+            "short_name": "New Report",
+            "description": "Start writing a new report",
             "url": "/create?source=pwa",
             "icons": [
                 {

@@ -292,8 +292,8 @@ const Footer = () => {
                     <div className="flex items-center space-x-3">
                       <Plus className="w-5 h-5" />
                       <div className="text-left">
-                        <span className="block font-semibold">Create New Post</span>
-                        <span className="text-xs opacity-90">Write a detailed blog post</span>
+                        <span className="block font-semibold">Submit New Report</span>
+                        <span className="text-xs opacity-90">Share your scam experience</span>
                       </div>
                     </div>
                   </Button>
