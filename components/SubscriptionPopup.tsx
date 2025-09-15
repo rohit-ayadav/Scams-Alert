@@ -157,14 +157,14 @@ const SubscriptionPopup = () => {
                 <AlertContent
                     isDark={isDarkMode}
                     title="Notification Permission Denied"
-                    description="You have denied permission for notifications. Please enable notifications from your browser settings to stay updated on our latest blog posts."
+                    description="You have denied permission for notifications. Please enable notifications from your browser settings to stay updated on our latest report posts."
                     onClose={handleClose}
                 />
             ) : (
                 <AlertContent
                     isDark={isDarkMode}
                     title="Stay Updated!"
-                    description="Never miss our latest blog posts! Enable notifications to get updates on new content."
+                    description="Never miss our latest report posts! Enable notifications to get updates on new content."
                     onClose={handleClose}
                     onSubscribe={handleSubscribe}
                     showSubscribeButton={true}

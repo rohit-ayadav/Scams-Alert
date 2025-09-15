@@ -200,13 +200,13 @@ const ServicesPage = () => {
       ]
     },
     {
-      title: "✍️ Blog Writing Assistance",
+      title: "✍️ Report Writing Assistance",
       description: "Make writing easy and effective.",
       services: [
         {
           icon: <PenTool className="text-white" size={24} />,
           title: "AI-powered SEO Title Generator",
-          description: "Generate engaging, SEO-optimized titles for your technical blog posts.",
+          description: "Generate engaging, SEO-optimized titles for your technical report posts.",
           features: ["Keyword analysis", "Click-through optimization", "A/B testing"],
           ctaText: "Generate Titles"
         },
@@ -233,8 +233,8 @@ const ServicesPage = () => {
         },
         {
           icon: <PenTool className="text-white" size={24} />,
-          title: "Custom Blog URL Support",
-          description: "Create SEO-friendly, custom URLs for your technical blog posts.",
+          title: "Custom Report URL Support",
+          description: "Create SEO-friendly, custom URLs for your technical report posts.",
           features: ["Slug generator", "Collision detection", "301 redirect management"],
           ctaText: "Configure URLs"
         }
@@ -267,8 +267,8 @@ const ServicesPage = () => {
         },
         {
           icon: <TrendingUp className="text-white" size={24} />,
-          title: "Blog Performance Checker",
-          description: "Analyze and optimize your blog posts for maximum search engine visibility.",
+          title: "Report Performance Checker",
+          description: "Analyze and optimize your report posts for maximum search engine visibility.",
           features: ["Keyword density", "Readability score", "Technical SEO checks"],
           ctaText: "Check Performance"
         },
@@ -287,8 +287,8 @@ const ServicesPage = () => {
       services: [
         {
           icon: <LayoutDashboard className="text-white" size={24} />,
-          title: "Blog Analytics",
-          description: "Track performance metrics for your blog posts with detailed insights.",
+          title: "Report Analytics",
+          description: "Track performance metrics for your report posts with detailed insights.",
           features: ["View counts", "User engagement", "Traffic sources"],
           ctaText: "View Analytics"
         },

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
-import { Menu, X, Code, Terminal, Settings, Edit3, Layout, Users, User, Bell, Sun, Moon, CodeXml } from 'lucide-react';
+import { Menu, X, Code, Terminal, Settings, Edit3, Layout, Users, User, Bell, Sun, Moon, CodeXml, AlertTriangle, BookOpen } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
 import ProfileDisplay from './Logo';
 import DesktopNavProfile from './ProfileDesktop';
@@ -60,10 +60,10 @@ export const Navbar = () => {
 
   const navLinks = [
     { href: '/', label: 'Home', icon: Layout },
-    { href: '/blogs', label: 'DevPosts', icon: Terminal },
+    { href: '/blogs', label: 'Scam Reports', icon: AlertTriangle },
     { href: '/create', label: 'Write', icon: Edit3 },
     { href: '/dashboard', label: 'Dashboard', icon: Code },
-    { href: '/tools', label: 'Tools', icon: CodeXml },
+    { href: '/resources', label: 'Safety Guide', icon: BookOpen },
     { href: '/contacts', label: 'Community', icon: Users },
   ];
 

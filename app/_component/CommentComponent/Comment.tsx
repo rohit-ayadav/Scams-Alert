@@ -30,7 +30,7 @@ export const CommentSection: React.FC<CommentSectionProps> = ({ postId }) => {
                 <div className="flex justify-between items-center mb-6 flex-wrap gap-2">
                     <div className="flex items-center gap-2">
                         <h2 className={`text-xl sm:text-2xl font-bold ${getThemeClass('text-gray-900', 'text-gray-100')}`}>
-                            Comments
+                            Similar experiences / feedback
                         </h2>
                         <Badge variant="outline" className={getThemeClass('bg-blue-50 text-blue-600', 'bg-blue-900/30 text-blue-400')}>
                             {commentCount}

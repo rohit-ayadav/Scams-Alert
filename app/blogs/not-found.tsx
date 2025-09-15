@@ -13,7 +13,7 @@ export default function NotFound() {
             <div className={`p-6 max-w-2xl w-full border-l-4 border-yellow-500 ${isDarkMode ? 'bg-gray-800' : 'bg-yellow-50'}`}>
                 <div className="flex flex-col">
                     <p className={`text-xl font-semibold ${isDarkMode ? 'text-amber-400' : 'text-yellow-700'}`}>
-                        Blog Post Not Found
+                        Report Post Not Found
                     </p>
                     <p className={`mt-2 mb-6 ${isDarkMode ? 'text-gray-300' : 'text-yellow-700'}`}>
                         The blog post you're looking for doesn't exist or has been removed.
@@ -36,7 +36,7 @@ export default function NotFound() {
                                 ? 'bg-amber-600 hover:bg-amber-700 text-gray-100'
                                 : 'bg-yellow-500 hover:bg-yellow-600 text-white'}`}>
                             <BookOpen className="h-4 w-4" />
-                            See All Blogs
+                            See All Scam Reports
                         </Link>
 
                         <Link href="/dashboard" className={`px-4 py-2 rounded-lg transition-colors flex items-center gap-2

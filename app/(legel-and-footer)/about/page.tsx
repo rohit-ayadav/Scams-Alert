@@ -14,7 +14,7 @@ const AboutPage = () => {
     {
       icon: <BookOpen className="w-8 h-8 text-blue-500 dark:text-blue-400" />,
       emoji: "📝",
-      title: "Smart Blog Editor",
+      title: "Smart Report Editor",
       description: "Create content with Markdown, Visual & Raw HTML editors, with auto-generated tags and SEO suggestions."
     },
     {
@@ -112,7 +112,7 @@ const AboutPage = () => {
                 <Button size="lg" variant="outline" className="rounded-md border-gray-300 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
                   onClick={() => window.location.href = "/blogs"}
                 >
-                  Explore Blogs
+                  Explore Reports
                 </Button>
               </div>
             </div>

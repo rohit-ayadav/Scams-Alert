@@ -32,7 +32,7 @@ async function getBlogData(id: string): Promise<EditBlogState> {
     };
 
     if (!id) {
-        return { ...nullresponse, error: "Blog id required to edit the blog...", status: "draft" as 'draft' }
+        return { ...nullresponse, error: "Report id required to edit the blog...", status: "draft" as 'draft' }
     }
 
     try {
@@ -42,7 +42,7 @@ async function getBlogData(id: string): Promise<EditBlogState> {
                 ? await Blog.findOne({ slug: id })
                 : null;
 
-        if (!post) return { ...nullresponse, error: "Blog post not found, please check the id...", status: "draft" as 'draft' };
+        if (!post) return { ...nullresponse, error: "Report post not found, please check the id...", status: "draft" as 'draft' };
 
         return {
             success: true,

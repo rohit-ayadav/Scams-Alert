@@ -131,7 +131,7 @@ async function getSearchResults(params: SearchParams) {
         }
 
         // Get popular categories and tags for suggestions
-        const aggregations = await Blog.aggregate([
+        const aggregations = await Report.aggregate([
             { $match: query },
             {
                 $facet: {

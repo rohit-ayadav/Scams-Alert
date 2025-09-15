@@ -172,7 +172,7 @@ function CreateBlogComponent() {
 
                 updateState({ blogId: data.data.id });
                 localStorage.removeItem(DRAFT_STORAGE_KEY);
-                toast.success('Blog post created successfully');
+                toast.success('Report post created successfully');
                 clearForm();
                 if (state.status === 'draft')
                     router.push(`/dashboard?tab=posts`);
@@ -211,7 +211,7 @@ function CreateBlogComponent() {
                     isDarkMode={isDarkMode}
                     error={state.error}
                     onDismissError={handleDismissError}
-                    title={state.blogId ? "Edit Blog Post" : "Create Blog Post"}
+                    title={state.blogId ? "Edit Report Post" : "Create Report Post"}
                 />
 
                 <EditorCard

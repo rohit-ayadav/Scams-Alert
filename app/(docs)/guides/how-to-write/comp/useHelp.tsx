@@ -42,7 +42,7 @@ const TableOfContents = () => {
         { id: 'getting-started', title: 'Getting Started', icon: <FileText size={16} /> },
         { id: 'audience', title: 'Understanding Your Audience', icon: <Users size={16} /> },
         { id: 'topics', title: 'Choosing the Right Topic', icon: <Zap size={16} /> },
-        { id: 'creating-post', title: 'Creating Your Blog Post', icon: <PenTool size={16} /> },
+        { id: 'creating-post', title: 'Creating Your Report Post', icon: <PenTool size={16} /> },
         { id: 'best-practices', title: 'Writing Best Practices', icon: <Book size={16} /> },
         { id: 'code-snippets', title: 'Adding Code Snippets', icon: <Code size={16} /> },
         { id: 'images', title: 'Including Images', icon: <Image size={16} /> },

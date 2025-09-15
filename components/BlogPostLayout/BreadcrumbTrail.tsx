@@ -69,9 +69,9 @@ export const BreadcrumbTrail: React.FC<{
                 aria-hidden="true"
             />
 
-            <Breadcrumb href="/blogs" isDarkMode={isDarkMode} text='Go to Blogs'>
+            <Breadcrumb href="/blogs" isDarkMode={isDarkMode} text='Go to Reports'>
                 <Text className={classes.homeIcon} />
-                <span className="hidden md:inline">Blogs</span>
+                <span className="hidden md:inline">Reports</span>
             </Breadcrumb>
 
             <ChevronRight

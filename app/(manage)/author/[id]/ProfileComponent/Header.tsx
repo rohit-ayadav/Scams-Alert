@@ -49,7 +49,7 @@ const Header = ({ author, isDarkMode, toggleDarkMode, isShareSheetOpen, setIsSha
                 </Link>
                 <div className="breadcrumbs text-xs sm:text-sm flex overflow-hidden whitespace-nowrap">
                     <Link href="/blogs" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 flex-shrink-0">
-                        Blogs
+                        Reports
                     </Link>
                     <span className="mx-1 sm:mx-2 text-gray-400 flex-shrink-0">/</span>
                     <Link href="/author" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 flex-shrink-0">

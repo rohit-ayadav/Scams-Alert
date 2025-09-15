@@ -99,7 +99,7 @@ function Filters({ currentFilters, suggestions }: SearchFiltersProps) {
                     className={`lg:hidden p-2 rounded-full transition-colors ${isDarkMode
                         ? "hover:bg-gray-700"
                         : "hover:bg-gray-100"
-                    }`}
+                        }`}
                     aria-label={isOpen ? "Close filters" : "Open filters"}
                 >
                     {isOpen ? <X size={18} /> : <Filter size={18} />}
@@ -115,8 +115,8 @@ function Filters({ currentFilters, suggestions }: SearchFiltersProps) {
 
             {/* Filter Content */}
             <div className={`space-y-4 p-4 ${isOpen
-                    ? 'fixed left-0 right-0 bottom-0 rounded-t-xl z-50 max-h-[80vh] overflow-y-auto lg:static lg:max-h-none lg:rounded-none lg:z-auto'
-                    : 'hidden lg:block'
+                ? 'fixed left-0 right-0 bottom-0 rounded-t-xl z-50 max-h-[80vh] overflow-y-auto lg:static lg:max-h-none lg:rounded-none lg:z-auto'
+                : 'hidden lg:block'
                 } ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
 
                 {/* Content Type Section */}
@@ -134,12 +134,12 @@ function Filters({ currentFilters, suggestions }: SearchFiltersProps) {
                             value={currentFilters.type || 'all'}
                             onChange={(e) => updateFilters({ type: e.target.value })}
                             className={`w-full p-2 border rounded transition-colors ${isDarkMode
-                                    ? "bg-gray-700 border-gray-600 text-white"
-                                    : "bg-white border-gray-300 text-gray-900"
+                                ? "bg-gray-700 border-gray-600 text-white"
+                                : "bg-white border-gray-300 text-gray-900"
                                 }`}
                         >
                             <option value="all">All Content</option>
-                            <option value="blogs">Blogs</option>
+                            <option value="blogs">Reports</option>
                             <option value="users">Users</option>
                         </select>
                     )}
@@ -163,8 +163,8 @@ function Filters({ currentFilters, suggestions }: SearchFiltersProps) {
                             value={currentFilters.sort || 'recent'}
                             onChange={(e) => updateFilters({ sort: e.target.value })}
                             className={`w-full p-2 border rounded transition-colors ${isDarkMode
-                                    ? "bg-gray-700 border-gray-600 text-white"
-                                    : "bg-white border-gray-300 text-gray-900"
+                                ? "bg-gray-700 border-gray-600 text-white"
+                                : "bg-white border-gray-300 text-gray-900"
                                 }`}
                         >
                             <option value="recent">Most Recent</option>
@@ -197,8 +197,8 @@ function Filters({ currentFilters, suggestions }: SearchFiltersProps) {
                                     value={currentFilters.from || ''}
                                     onChange={(e) => updateFilters({ from: e.target.value })}
                                     className={`w-full p-2 border rounded transition-colors ${isDarkMode
-                                            ? "bg-gray-700 border-gray-600 text-white"
-                                            : "bg-white border-gray-300 text-gray-900"
+                                        ? "bg-gray-700 border-gray-600 text-white"
+                                        : "bg-white border-gray-300 text-gray-900"
                                         }`}
                                 />
                             </div>
@@ -209,8 +209,8 @@ function Filters({ currentFilters, suggestions }: SearchFiltersProps) {
                                     value={currentFilters.to || ''}
                                     onChange={(e) => updateFilters({ to: e.target.value })}
                                     className={`w-full p-2 border rounded transition-colors ${isDarkMode
-                                            ? "bg-gray-700 border-gray-600 text-white"
-                                            : "bg-white border-gray-300 text-gray-900"
+                                        ? "bg-gray-700 border-gray-600 text-white"
+                                        : "bg-white border-gray-300 text-gray-900"
                                         }`}
                                 />
                             </div>
@@ -292,12 +292,12 @@ function Filters({ currentFilters, suggestions }: SearchFiltersProps) {
                                             tag: currentFilters.tag === tag._id ? "" : tag._id
                                         })}
                                         className={`px-3 py-1 rounded-full text-sm transition-colors ${currentFilters.tag === tag._id
-                                                ? isDarkMode
-                                                    ? 'bg-blue-600 text-white'
-                                                    : 'bg-blue-500 text-white'
-                                                : isDarkMode
-                                                    ? 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                                                    : 'bg-gray-100 hover:bg-gray-200'
+                                            ? isDarkMode
+                                                ? 'bg-blue-600 text-white'
+                                                : 'bg-blue-500 text-white'
+                                            : isDarkMode
+                                                ? 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                                                : 'bg-gray-100 hover:bg-gray-200'
                                             }`}
                                     >
                                         {tag._id}
@@ -314,8 +314,8 @@ function Filters({ currentFilters, suggestions }: SearchFiltersProps) {
                     <button
                         onClick={clearFilters}
                         className={`w-full py-2.5 rounded transition-colors ${isDarkMode
-                                ? "bg-gray-700 text-red-400 hover:bg-gray-600"
-                                : "text-red-500 hover:text-red-600 hover:bg-red-50"
+                            ? "bg-gray-700 text-red-400 hover:bg-gray-600"
+                            : "text-red-500 hover:text-red-600 hover:bg-red-50"
                             }`}
                     >
                         Clear All Filters
@@ -327,8 +327,8 @@ function Filters({ currentFilters, suggestions }: SearchFiltersProps) {
                     <button
                         onClick={() => setIsOpen(false)}
                         className={`w-full py-2.5 rounded font-medium transition-colors ${isDarkMode
-                                ? "bg-gray-700 text-white hover:bg-gray-600"
-                                : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                            ? "bg-gray-700 text-white hover:bg-gray-600"
+                            : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                             }`}
                     >
                         Apply Filters

@@ -53,7 +53,7 @@ export async function updateBlog(Post: UpdatePostType) {
         if (!blog) {
             return {
                 message: "",
-                error: "Blog not found"
+                error: "Report not found"
             }
         }
 
@@ -100,7 +100,7 @@ export async function updateBlog(Post: UpdatePostType) {
                 error: "Slug is already taken"
             }
         }
-        
+
         blog.title = Post.title;
         blog.content = Post.content;
         blog.thumbnail = Post.thumbnail;
@@ -121,7 +121,7 @@ export async function updateBlog(Post: UpdatePostType) {
         revalidatePath(`/blogs`);
 
         return {
-            message: `Blog post ${isUpdatedByAdmin ? `updated by admin ${session.user.name}` : "updated"} successfully`,
+            message: `Report post ${isUpdatedByAdmin ? `updated by admin ${session.user.name}` : "updated"} successfully`,
             error: ""
         }
     }
@@ -146,7 +146,7 @@ export async function publishBlog(id: string) {
         if (!blog) {
             return {
                 message: "",
-                error: "Blog not found"
+                error: "Report not found"
             }
         }
         blog.status = "published";
@@ -156,7 +156,7 @@ export async function publishBlog(id: string) {
         revalidatePath(`/edit/${blog.slug}`);
         revalidatePath(`/blogs/${blog._id.toString()}`);
         return {
-            message: "Blog post published successfully",
+            message: "Report post published successfully",
             error: ""
         }
 

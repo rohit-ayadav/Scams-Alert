@@ -4,7 +4,7 @@ import Blog from "./blogs.models";
 const monthlyStatsSchema = new mongoose.Schema({
     blog: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Blog",
+        ref: "Report",
         required: true
     },
     month: {

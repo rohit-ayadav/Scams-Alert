@@ -2,7 +2,7 @@ import ScamCategory from '@/models/category.models';
 import ScamType from '@/models/scamType.model';
 import { connectDB } from '@/utils/db';
 import React from 'react'
-import Report from './Report';
+import Blog from './Report';
 import serializeDocument from '@/utils/date-formatter';
 
 export interface ScamCategory {

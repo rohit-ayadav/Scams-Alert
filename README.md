@@ -1,29 +1,29 @@
-# Blog Website
+# Report Website
 
-Welcome to the Blog Website! This platform allows users to read, create, and share blogs across various topics. The website is built with **Next.js** and includes features like user authentication, blog creation, and a rich-text editor for seamless writing experiences.
+Welcome to the Report Website! This platform allows users to read, create, and share blogs across various topics. The website is built with **Next.js** and includes features like user authentication, blog creation, and a rich-text editor for seamless writing experiences.
 
 ## Features
 
 1. **User Authentication**:
    - Sign up and log in using email/password or Google account (via OAuth).
    - Secure authentication with session management using NextAuth.js.
-2. **Blog Creation**:
+2. **Report Creation**:
 
    - Users can create, edit, and delete their blogs.
-   - The "Create Blog" page includes a rich text editor with formatting options (bold, italic, headings, etc.).
+   - The "Create Report" page includes a rich text editor with formatting options (bold, italic, headings, etc.).
    - Users can also upload cover images for their blogs.
 
-3. **Dynamic Blog Display**:
+3. **Dynamic Report Display**:
 
-   - Blogs are displayed dynamically with individual pages for each blog post.
-   - Blog lists are paginated for easy navigation.
+   - Reports are displayed dynamically with individual pages for each blog post.
+   - Report lists are paginated for easy navigation.
 
 4. **Responsive Design**:
 
    - The website is fully responsive and works across all devices (mobile, tablet, desktop).
 
 5. **SEO Optimized**:
-   - Blog posts are SEO-friendly, helping them rank better on search engines.
+   - Report posts are SEO-friendly, helping them rank better on search engines.
 
 ## Tech Stack
 
@@ -35,7 +35,7 @@ Welcome to the Blog Website! This platform allows users to read, create, and sha
 
 ## Live Website
 
-Check out the live website here: [Blog Website](https://www.ScamAlert.in/)
+Check out the live website here: [Report Website](https://www.ScamAlert.in/)
 
 ## Installation and Setup
 
@@ -73,7 +73,7 @@ Open the folder
 
 - Users can browse blogs without an account.
 - To create, edit, or delete blogs, users must sign up or log in.
-- After logging in, go to the "Create Blog" page to start writing.
+- After logging in, go to the "Create Report" page to start writing.
 - Once published, blogs will be visible on the homepage and searchable by title.
 
 ## Contributing

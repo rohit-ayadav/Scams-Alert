@@ -23,7 +23,7 @@ async function getPostResults(blogid: string) {
             return {
                 success: false,
                 statusCode: 404,
-                error: 'Blog not found'
+                error: 'Report not found'
             };
         }
         let user: UserType;

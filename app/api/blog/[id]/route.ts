@@ -14,13 +14,13 @@ export async function PATCH(request: NextRequest) {
   const session = await getSessionAtHome();
   if (!session) { return NextResponse.json({ message: "You need to be logged in to update a blog post", success: false }, { status: 401 }); }
   const id = request.nextUrl.pathname.split("/").pop();
-  if (!id) { return NextResponse.json({ message: "Blog id is required", success: false }, { status: 400 }); }
+  if (!id) { return NextResponse.json({ message: "Report id is required", success: false }, { status: 400 }); }
 
   try {
     const data = await request.json();
     if (!data.category) { return NextResponse.json({ message: "Category is required", success: false }, { status: 400 }); }
     const blog = await Blog.findById(id);
-    if (!blog) { return NextResponse.json({ message: "Blog not found", success: false }, { status: 404 }); }
+    if (!blog) { return NextResponse.json({ message: "Report not found", success: false }, { status: 404 }); }
     const userRole = await User.findOne({ email: session.user.email }).select("role");
     if (session?.user?.email !== blog.createdBy || userRole?.role !== "admin") { return NextResponse.json({ message: "You are not authorized to update this blog", success: false }, { status: 403 }); }
 
@@ -28,7 +28,7 @@ export async function PATCH(request: NextRequest) {
     const result = await blog.save();
 
     if (!result) { return NextResponse.json({ message: "Something went wrong", success: false }, { status: 500 }); }
-    if (result.category === data.category) { return NextResponse.json({ message: "Blog updated successfully", success: true }, { status: 200 }); }
+    if (result.category === data.category) { return NextResponse.json({ message: "Report updated successfully", success: true }, { status: 200 }); }
     return NextResponse.json({ message: "Something went wrong", success: false }, { status: 500 });
   } catch (error: any) {
     console.error("Error updating blog:", error);

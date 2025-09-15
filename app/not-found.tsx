@@ -11,7 +11,7 @@ const NotFoundPage = () => {
 
     // Popular pages with more meaningful structure
     const popularPages = [
-        { label: 'Blog', href: '/blogs', icon: <ExternalLink className="w-3 h-3" /> },
+        { label: 'Report', href: '/blogs', icon: <ExternalLink className="w-3 h-3" /> },
         { label: 'Dashboard', href: '/dashboard', icon: <ExternalLink className="w-3 h-3" /> },
         { label: 'About', href: '/about', icon: <ExternalLink className="w-3 h-3" /> },
         { label: 'Contact', href: '/contacts', icon: <ExternalLink className="w-3 h-3" /> },

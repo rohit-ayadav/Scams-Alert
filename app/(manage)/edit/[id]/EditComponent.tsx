@@ -128,7 +128,7 @@ function EditBlogComponent({ BlogData }: { BlogData: EditBlogState }) {
                     isDarkMode={isDarkMode}
                     error={state.error}
                     onDismissError={handleDismissError}
-                    title={"Edit Blog Post"}
+                    title={"Edit Report Post"}
                 />
 
                 <EditorCard

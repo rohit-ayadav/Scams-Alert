@@ -216,8 +216,8 @@ const BlogPost = ({ initialBlogs, initialStats, parentRefreshTrigger }: BlogPost
         <div className="w-full">
             <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight">Blog Dashboard</h1>
-                    <p className="text-muted-foreground mt-1">Manage and monitor all your blog posts</p>
+                    <h1 className="text-3xl font-bold tracking-tight">Report Dashboard</h1>
+                    <p className="text-muted-foreground mt-1">Manage and monitor all your report posts</p>
                 </div>
                 <Button className="flex items-center gap-2" onClick={() => router.push('/create')}>
                     <PlusCircle size={16} />
@@ -336,7 +336,7 @@ const BlogPost = ({ initialBlogs, initialStats, parentRefreshTrigger }: BlogPost
                             >
                                 {filteredBlogs.length === 0 ? (
                                     <div className="text-center py-12 bg-muted/30 rounded-lg">
-                                        <h3 className="text-lg font-medium mb-2">No blog posts found</h3>
+                                        <h3 className="text-lg font-medium mb-2">No report posts found</h3>
                                         <p className="text-muted-foreground mb-4">
                                             {search ? 'No posts match your search criteria.' : `You don't have any ${status.label.toLowerCase()} yet.`}
                                         </p>

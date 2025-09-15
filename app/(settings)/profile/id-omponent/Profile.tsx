@@ -77,7 +77,7 @@ const AuthorPage = ({ authorPosts, author }: { authorPosts: BlogPostType[], auth
         return (
             <div className={`flex flex-col items-center justify-center h-screen ${isDarkMode ? 'dark' : ''}`}>
                 <h2 className="text-xl font-bold mb-4">Author not found</h2>
-                <Link href="/blogs"><Button>Return to Blogs</Button></Link>
+                <Link href="/blogs"><Button>Return to Reports</Button></Link>
             </div>
         );
     }
@@ -100,7 +100,7 @@ const AuthorPage = ({ authorPosts, author }: { authorPosts: BlogPostType[], auth
                                 </Link>
                                 <div className="breadcrumbs text-sm">
                                     <Link href="/blogs" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200">
-                                        Blogs
+                                        Reports
                                     </Link>
                                     <span className="mx-2 text-gray-400">/</span>
                                     <Link href="/author" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200">

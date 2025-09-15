@@ -65,11 +65,11 @@ async function likePost(id: string): Promise<InteractionResult> {
         // Find the post first to check if it exists
         const existingPost = await Blog.findOne(filter);
         if (!existingPost) {
-            throw new InteractionError('Blog post not found');
+            throw new InteractionError('Report post not found');
         }
 
         // Update the post
-        const post = await Blog.findOneAndUpdate(
+        const post = await Report.findOneAndUpdate(
             filter,
             { $inc: { likes: 1 } },
             {
@@ -118,7 +118,7 @@ async function dislikePost(id: string): Promise<InteractionResult> {
         // Find the post first to check if it exists and current likes
         const existingPost = await Blog.findOne(filter);
         if (!existingPost) {
-            throw new InteractionError('Blog post not found');
+            throw new InteractionError('Report post not found');
         }
 
         // Don't allow negative likes
@@ -131,7 +131,7 @@ async function dislikePost(id: string): Promise<InteractionResult> {
         }
 
         // Update the post
-        const post = await Blog.findOneAndUpdate(
+        const post = await Report.findOneAndUpdate(
             filter,
             { $inc: { likes: -1 } },
             {

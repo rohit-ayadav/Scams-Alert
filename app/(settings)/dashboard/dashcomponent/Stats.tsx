@@ -18,7 +18,7 @@ const Stats = ({ totalStats, chartData, engagementRate }: StatsProps) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Total Blogs</CardTitle>
+                    <CardTitle className="text-sm font-medium">Total Reports</CardTitle>
                     <div className="h-4 w-4 text-indigo-600">
                         <ListIcon className="h-4 w-4" />
                     </div>

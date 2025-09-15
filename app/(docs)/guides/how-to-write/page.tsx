@@ -66,14 +66,14 @@ const GuidePage = () => {
                     >
                         <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent 
               bg-gradient-to-r from-blue-600 to-indigo-600">
-                            The Complete Guide to Writing Technical Blogs on ScamAlert
+                            The Complete Guide to Writing Technical Reports on ScamAlert
                         </h1>
                         <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-600 dark:text-gray-300">
                             Everything you need to know about creating impactful technical blogs that engage readers and showcase your expertise.
                         </p>
 
                         <div className="flex flex-wrap justify-center gap-3">
-                            {['Technical Writing', 'SEO', 'Developer Blogs', 'Content Creation', 'Markdown'].map((tag, index) => (
+                            {['Technical Writing', 'SEO', 'Developer Reports', 'Content Creation', 'Markdown'].map((tag, index) => (
                                 <Badge
                                     key={index}
                                     variant="secondary"

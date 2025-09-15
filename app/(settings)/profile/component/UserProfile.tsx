@@ -26,9 +26,9 @@ const ProfileCTA = ({ username, isDarkMode }: { username: string, isDarkMode: bo
                 className={`flex items-center justify-between p-4 rounded-lg cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'} transition-colors duration-200`}
             >
                 <div>
-                    <h3 className="font-semibold text-lg">Manage Your Blogs</h3>
+                    <h3 className="font-semibold text-lg">Manage Your Reports</h3>
                     <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                        Edit, publish and track your blog posts
+                        Edit, publish and track your report posts
                     </p>
                 </div>
                 <LayoutDashboard className={`w-6 h-6 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`} />

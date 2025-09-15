@@ -42,7 +42,7 @@ function generateSitemap(posts: BlogPostType[]) {
         <priority>1.0</priority>
     </url>
     
-    <!-- Blog index page -->
+    <!-- Report index page -->
     <url>
         <loc>${BASE_URL}/blogs</loc>
         <lastmod>${new Date().toISOString()}</lastmod>
@@ -50,7 +50,7 @@ function generateSitemap(posts: BlogPostType[]) {
         <priority>0.9</priority>
     </url>
     
-    <!-- Individual blog posts Total of ${posts.length} blogs -->
+    <!-- Individual report posts Total of ${posts.length} blogs -->
     ${posts.map(post => `
     <url>
         <loc>${BASE_URL}/blogs/${post.slug}</loc>

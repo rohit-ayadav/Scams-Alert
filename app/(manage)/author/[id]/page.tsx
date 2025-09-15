@@ -82,11 +82,11 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     const lastUpdated = new Date(author?.updatedAt ?? new Date()).toISOString();
 
     return {
-        title: `${authorName} - Expert Dev Blogs & Coding Tutorials | ScamAlert`,
+        title: `${authorName} - Expert Dev Reports & Coding Tutorials | ScamAlert`,
         description,
         keywords: "developer blogs, programming articles, web development, coding tutorials",
         openGraph: {
-            title: `🔥 ${authorName}’s Best Coding Blogs & Developer Tips | ScamAlert`,
+            title: `🔥 ${authorName}’s Best Coding Reports & Developer Tips | ScamAlert`,
             description,
             url,
             siteName: "ScamAlert",
@@ -98,7 +98,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
             card: "summary_large_image",
             site: "@ScamAlert",
             creator: `@${author.username}`,
-            title: `${authorName} - Dev Blogs & Tech Tutorials`,
+            title: `${authorName} - Dev Reports & Tech Tutorials`,
             description,
             images: [{ url: thumbnail }]
         },

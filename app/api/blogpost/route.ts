@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
       .sort({ createdAt: -1 })
       .lean()
       .exec();
-    
+
     if (!blogs) {
       return NextResponse.json(
         {
@@ -79,7 +79,7 @@ export async function DELETE(request: NextRequest, response: NextResponse) {
     );
   }
   try {
-    const blogs = await Blog.deleteMany({ createdBy: id });
+    const blogs = await Report.deleteMany({ createdBy: id });
     if (!blogs) {
       return NextResponse.json(
         {

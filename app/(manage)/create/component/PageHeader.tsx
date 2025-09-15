@@ -12,7 +12,7 @@ interface PageHeaderProps {
 }
 
 const PageHeader = ({
-    title = "Create Blog Post",
+    title = "Create Report Post",
     isDarkMode = false,
     error = null,
     className = "",

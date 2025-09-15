@@ -192,7 +192,7 @@ function AuthorDashboard({ user, blogs, monthlyStats }: AuthorDashboardProps) {
                         <TabsList className="grid grid-cols-3 w-full max-w-md">
                             <TabsTrigger value="overview">Overview</TabsTrigger>
                             <TabsTrigger value="analytics">Analytics</TabsTrigger>
-                            <TabsTrigger value="blogs">Manage Blogs</TabsTrigger>
+                            <TabsTrigger value="blogs">Manage Reports</TabsTrigger>
                         </TabsList>
 
                         {selectedView !== 'blogs' && (

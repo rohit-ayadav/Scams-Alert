@@ -92,7 +92,7 @@ export const TitleSection: React.FC<TitleSectionProps> = ({
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 px-3 sm:px-6">
                 <div className="flex items-center">
                     <Type className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-muted-foreground" />
-                    <CardTitle className="text-lg sm:text-xl font-bold">Blog Title</CardTitle>
+                    <CardTitle className="text-lg sm:text-xl font-bold">Report Title</CardTitle>
                 </div>
                 <span className="text-xs sm:text-sm text-muted-foreground">
                     {title.length} / {maxLength}

@@ -6,10 +6,10 @@ import { Star } from 'lucide-react'
 const CreateWriteAndCode = ({ isDarkMode }: { isDarkMode: boolean }) => {
     return (
         <div>
-            {/* Creating Your Blog Post */}
+            {/* Creating Your Report Post */}
             <section id="creating-post" className="mb-16">
                 <SectionHeader
-                    title="Creating Your Blog Post"
+                    title="Creating Your Report Post"
                     subtitle="A step-by-step guide to the ScamAlert writing process"
                 />
 
@@ -78,14 +78,14 @@ const CreateWriteAndCode = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
                     <CodeBlock
                         language="markdown"
-                        code={`# My First Blog Post\n\n## Introduction\nThis is a sample blog post written in Markdown.`}
+                        code={`# My First Report Post\n\n## Introduction\nThis is a sample blog post written in Markdown.`}
                     />
                     <p className="text-sm text-gray-500 dark:text-gray-400">
                         Example of a Markdown code block
                     </p>
                     <CodeBlock
                         language="html"
-                        code={`<h1>My First Blog Post</h1>\n<p>This is a sample blog post written in HTML.</p>`}
+                        code={`<h1>My First Report Post</h1>\n<p>This is a sample blog post written in HTML.</p>`}
                     />
                     <p className="text-sm text-gray-500 dark:text-gray-400">
                         Example of an HTML code block

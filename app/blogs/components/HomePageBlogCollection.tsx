@@ -128,7 +128,7 @@ const HomePageBlogCollection = ({ state, handleRetry, setState, searchLoading }:
                                     value={searchInput}
                                     onChange={(e) => setSearchInput(e.target.value)}
                                     className={`pl-8 sm:pl-10 pr-8 w-full h-10 ${themeStyles.input.bg} ${themeStyles.input.border} ${themeStyles.input.text} ${themeStyles.input.placeholder}`}
-                                    aria-label="Search blog posts"
+                                    aria-label="Search report posts"
                                 />
                                 {searchInput && (
                                     <button

@@ -30,7 +30,7 @@ const PreviewConfirmation = ({ id }: { id: string }) => {
     return (
         <div className={`flex flex-col items-center justify-center min-h-screen p-6 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'}`}>
             <Card className="w-full max-w-2xl p-6 text-center">
-                <h1 className="text-3xl font-bold">Preview Your Blog</h1>
+                <h1 className="text-3xl font-bold">Preview Your Report</h1>
                 <p className="text-lg mt-2 text-gray-500">Check how your blog post looks before publishing.</p>
 
                 <div className="flex justify-center gap-4 mt-4">

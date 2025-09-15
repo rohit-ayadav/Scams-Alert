@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
     };
 
     // Save blog post
-    const newBlogPost = new Blog(blogPost);
+    const newBlogPost = new Report(blogPost);
     await newBlogPost.save();
     const blogPostId = newBlogPost.slug;
 
@@ -81,7 +81,7 @@ export async function POST(request: NextRequest) {
       const subscriptions = await Notification.find({});
       if (subscriptions.length) {
         const payload = {
-          title: `New Blog Post: ${blogPost.title}`,
+          title: `New Report Post: ${blogPost.title}`,
           body: `A new blog post "${blogPost.title}" has been published`,
           image: blogPost.thumbnail,
           icon: "/favicon.ico",
@@ -111,7 +111,7 @@ export async function POST(request: NextRequest) {
     revalidatePath("/");
     revalidatePath(`/blogs/${slug}`);
     revalidatePath(`/blogs`);
-    return NextResponse.json({ message: "Blog post created successfully", success: true, data: { id: blogPostId } }, { status: 201 });
+    return NextResponse.json({ message: "Report post created successfully", success: true, data: { id: blogPostId } }, { status: 201 });
   } catch (error) {
     console.error("Error saving blog post:", error);
     return NextResponse.json({ message: (error as Error).message, success: false }, { status: 500 });
@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
 export async function DELETE(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const id = searchParams.get("id");
-  if (!id) { return NextResponse.json({ message: "Blog post id is required", success: false }, { status: 400 }); }
+  if (!id) { return NextResponse.json({ message: "Report post id is required", success: false }, { status: 400 }); }
   if (!mongoose.Types.ObjectId.isValid(id)) { return NextResponse.json({ message: "Invalid blog post id", success: false }, { status: 400 }); }
 
   const session = await getSessionAtHome();
@@ -129,7 +129,7 @@ export async function DELETE(request: NextRequest) {
   if (!session) { return NextResponse.json({ message: "You need to be logged in to delete a blog post", success: false }, { status: 401 }); }
 
   const blogPost = await Blog.findById(id);
-  if (!blogPost) { return NextResponse.json({ message: "Blog post not found", success: false }, { status: 404 }); }
+  if (!blogPost) { return NextResponse.json({ message: "Report post not found", success: false }, { status: 404 }); }
   if (blogPost.createdBy !== session?.user?.email) { return NextResponse.json({ message: "You are not authorized to delete this blog post", success: false }, { status: 403 }); }
 
   try {
@@ -139,7 +139,7 @@ export async function DELETE(request: NextRequest) {
     await blog.save();
     await User.findOneAndUpdate({ email: session?.user?.email }, { $inc: { noOfBlogs: -1 } });
 
-    return NextResponse.json({ message: "Blog post deleted successfully", success: true }, { status: 200 });
+    return NextResponse.json({ message: "Report post deleted successfully", success: true }, { status: 200 });
   } catch (error) {
     console.error("Error deleting blog post:", error);
     return NextResponse.json({ message: (error as Error).message, success: false }, { status: 500 });
@@ -148,7 +148,7 @@ export async function DELETE(request: NextRequest) {
 
 // GET /api/blog/route.ts
 /**
- * API to get related blog posts based on tags received in query params ?tags=tag1,tag2
+ * API to get related report posts based on tags received in query params ?tags=tag1,tag2
  * Also supports limiting results and fetching posts by a specific author.
  *
  * @param {NextRequest} request

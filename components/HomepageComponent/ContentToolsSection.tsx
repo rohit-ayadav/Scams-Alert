@@ -27,7 +27,7 @@ const ContentToolsSection = () => {
         },
         {
             icon: <Lightbulb size={48} />,
-            title: "Need Blog Ideas?",
+            title: "Need Report Ideas?",
             description: "Discover trending topics and get AI-powered suggestions for your next technical blog post.",
             action: "Get Ideas",
             link: "/tools/blog-ideas"

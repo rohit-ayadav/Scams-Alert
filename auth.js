@@ -107,7 +107,7 @@ export const authOptions = {
                     await existingUser.save();
                     await sendEmail({
                         to: email,
-                        subject: "New Login Alert 🚨 | Dev Blog",
+                        subject: "New Login Alert 🚨 | Scam Report",
                         message: LoginSuccessEmailTemplateF({
                             name: user.name,
                             loginTime: new Date(),
@@ -129,7 +129,7 @@ export const authOptions = {
                 await User.create(newUser);
                 sendEmail({
                     to: email,
-                    subject: "Registration successful ✔ | Dev Blog 🚀",
+                    subject: "Registration successful ✔ | Scam Report 🚀",
                     message: SignUpEmailTemplate({
                         name: newUser.name,
                         email: newUser.email,

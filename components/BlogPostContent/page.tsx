@@ -113,7 +113,7 @@ const BlogPostClientContent: React.FC<BlogPostClientContentProps> = ({
     }, [id]);
 
     const handleError = useCallback((error: Error) => {
-        console.error('Blog post error:', error);
+        console.error('Report post error:', error);
     }, []);
 
     // Memoized theme classes for better performance

@@ -1,6 +1,6 @@
 const BlogApproved = (name: string, blogTitle: string, blogUrl: string): string => {
     const authorName = name || "Author";
-    const BlogTitle = blogTitle || "Your Blog Title";
+    const BlogTitle = blogTitle || "Your Report Title";
     const BlogUrl = blogUrl || "https://ScamAlert.in/blogs";
     const currentYear = new Date().getFullYear();
 
@@ -9,7 +9,7 @@ const BlogApproved = (name: string, blogTitle: string, blogUrl: string): string 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Approval Confirmation</title>
+    <title>Report Approval Confirmation</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -86,7 +86,7 @@ const BlogApproved = (name: string, blogTitle: string, blogUrl: string): string 
     <div class="container">
         <div class="header">
             <img src="https://ScamAlert.in/logo.png" alt="ScamAlert Logo" class="logo" />
-            <h1>Congratulations! Your Blog is Approved</h1>
+            <h1>Congratulations! Your Report is Approved</h1>
         </div>
         <div class="content">
             <p>Dear ${authorName},</p>
@@ -106,7 +106,7 @@ const BlogApproved = (name: string, blogTitle: string, blogUrl: string): string 
             <p>We encourage you to share your blog with your network and engage with readers who comment on your post.</p>
            
             <div style="text-align: center; margin: 25px 0;">
-                <a href="${blogUrl}" target="_blank" class="cta-button">View Your Published Blog</a>
+                <a href="${blogUrl}" target="_blank" class="cta-button">View Your Published Report</a>
             </div>
             
             <div class="social-share">
@@ -141,7 +141,7 @@ const BlogApproved = (name: string, blogTitle: string, blogUrl: string): string 
 
 const BlogRejected = (name: string, blogTitle: string, reason: string, dashboardUrl: string): string => {
     const authorName = name || "Author";
-    const BlogTitle = blogTitle || "Your Blog Title";
+    const BlogTitle = blogTitle || "Your Report Title";
     const rejectionReason = reason || "It doesn't meet our community guidelines.";
     const dashboardLink = dashboardUrl || "https://ScamAlert.in/dashboard";
     const currentYear = new Date().getFullYear();
@@ -151,7 +151,7 @@ const BlogRejected = (name: string, blogTitle: string, reason: string, dashboard
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Submission Update</title>
+    <title>Report Submission Update</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -224,7 +224,7 @@ const BlogRejected = (name: string, blogTitle: string, reason: string, dashboard
     <div class="container">
         <div class="header">
             <img src="https://ScamAlert.in/logo.png" alt="ScamAlert Logo" class="logo" />
-            <h1>Update on Your Blog Submission</h1>
+            <h1>Update on Your Report Submission</h1>
         </div>
         <div class="content">
             <p>Dear ${authorName},</p>

@@ -63,8 +63,8 @@ function clamp(num: number, min: number, max: number): number {
     return Math.min(Math.max(num, min), max);
 }
 
-const buildQuery = (params: QueryParams): mongoose.FilterQuery<typeof Blog> => {
-    const query: mongoose.FilterQuery<typeof Blog> = {};
+const buildQuery = (params: QueryParams): mongoose.FilterQuery<typeof Report> => {
+    const query: mongoose.FilterQuery<typeof Report> = {};
 
     // If category is provided, add it to the query
     if (params.category && params.category !== "all") {
@@ -217,7 +217,7 @@ export async function GET(request: NextRequest) {
         };
 
         return NextResponse.json({
-            message: "Blog posts retrieved successfully",
+            message: "Report posts retrieved successfully",
             success: true,
             data,
             users: usersMap,

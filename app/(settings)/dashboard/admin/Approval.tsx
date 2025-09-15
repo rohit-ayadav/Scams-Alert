@@ -82,7 +82,7 @@ const Approval = () => {
             } else {
                 toast({
                     title: "Success",
-                    description: response.message || "Blog approved successfully",
+                    description: response.message || "Report approved successfully",
                 });
                 fetchPosts();
             }
@@ -121,7 +121,7 @@ const Approval = () => {
             } else {
                 toast({
                     title: "Success",
-                    description: response.message || "Blog rejected successfully",
+                    description: response.message || "Report rejected successfully",
                 });
                 setRejectDialogOpen(false);
                 fetchPosts();
@@ -239,14 +239,14 @@ const Approval = () => {
                                         <XCircle size={16} className="mr-1" />
                                         Reject
                                     </Button>
-                                    
+
                                     <Button
                                         variant="link"
                                         size="sm"
                                         className="text-blue-600 hover:text-blue-700"
                                         onClick={() => window.open(`/blog/${post._id}`, '_blank')}
                                     >
-                                        View Blog Post
+                                        View Report Post
                                     </Button>
                                     <Button
                                         variant="default"
@@ -267,7 +267,7 @@ const Approval = () => {
             <Dialog open={rejectDialogOpen} onOpenChange={setRejectDialogOpen}>
                 <DialogContent className="sm:max-w-md">
                     <DialogHeader>
-                        <DialogTitle>Reject Blog Post</DialogTitle>
+                        <DialogTitle>Reject Report Post</DialogTitle>
                     </DialogHeader>
                     <div className="py-4">
                         <div className="space-y-4">

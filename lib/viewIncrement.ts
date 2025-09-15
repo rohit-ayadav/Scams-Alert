@@ -93,7 +93,7 @@ const incrementView = async (id: string, like: boolean, staticContent?: boolean)
             // console.log(`View incremented for blog post with ID: ${id}`);
         }
     } catch (error) {
-        console.error('[Blog View Tracking Error]:', {
+        console.error('[Report View Tracking Error]:', {
             blogId: id,
             error: error instanceof Error ? error.message : 'Unknown error',
             timestamp: new Date().toISOString()

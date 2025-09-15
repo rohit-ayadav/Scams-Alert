@@ -28,7 +28,7 @@ const Header = ({ user }: { user: UserType }) => {
                     {/* <Link href="/create">
                         <Button size="sm">
                             <TrendingUpIcon className="h-4 w-4 mr-2" />
-                            Create New Blog
+                            Create New Report
                         </Button>
                     </Link> */}
                     <Link href="/profile">

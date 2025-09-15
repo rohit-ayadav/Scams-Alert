@@ -205,7 +205,7 @@ const UserManagement: React.FC = () => {
                             </p>
                         </div>
                         <div>
-                            <h4 className="font-medium">Total Blogs</h4>
+                            <h4 className="font-medium">Total Reports</h4>
                             <p className="text-sm text-muted-foreground">{user.noOfBlogs}</p>
                         </div>
                         <div>
@@ -266,7 +266,7 @@ const UserManagement: React.FC = () => {
                 </Card>
                 <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium">Avg Blogs/User</CardTitle>
+                        <CardTitle className="text-sm font-medium">Avg Reports/User</CardTitle>
                         <Calendar className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
@@ -363,7 +363,7 @@ const UserManagement: React.FC = () => {
                                     <TableHead>Email</TableHead>
                                     <TableHead>Role</TableHead>
                                     <TableHead className="cursor-pointer" onClick={() => handleSort('blogs')}>
-                                        Blogs {sortField === 'blogs' && (
+                                        Reports {sortField === 'blogs' && (
                                             <ArrowUpDown className="ml-2 h-4 w-4 inline" />
                                         )}
                                     </TableHead>

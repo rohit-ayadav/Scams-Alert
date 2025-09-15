@@ -95,7 +95,7 @@ const Overview = ({ chartData, categoryDistribution, timeframe }: OverviewProps)
                     <CardHeader className="px-3 py-3 sm:px-6 sm:py-4">
                         <CardTitle className="text-base sm:text-lg md:text-xl">Category Distribution</CardTitle>
                         <CardDescription className="text-xs sm:text-sm">
-                            Breakdown of your blog posts by category
+                            Breakdown of your report posts by category
                         </CardDescription>
                     </CardHeader>
                     <CardContent className="px-1 sm:px-4 md:px-6">
@@ -143,7 +143,7 @@ const Overview = ({ chartData, categoryDistribution, timeframe }: OverviewProps)
 
                 <Card className="border-0 shadow-lg">
                     <CardHeader className="px-3 py-3 sm:px-6 sm:py-4">
-                        <CardTitle className="text-base sm:text-lg md:text-xl">Monthly Blog Publications</CardTitle>
+                        <CardTitle className="text-base sm:text-lg md:text-xl">Monthly Report Publications</CardTitle>
                         <CardDescription className="text-xs sm:text-sm">
                             Number of blogs published each month
                         </CardDescription>
@@ -174,7 +174,7 @@ const Overview = ({ chartData, categoryDistribution, timeframe }: OverviewProps)
                                         formatter={(value) => [`${value} blogs`, 'Publications']}
                                         contentStyle={{ fontSize: windowWidth < 500 ? '10px' : '12px' }}
                                     />
-                                    <Bar dataKey="blogs" fill="#8884d8" name="Blogs Published" />
+                                    <Bar dataKey="blogs" fill="#8884d8" name="Reports Published" />
                                 </BarChart>
                             </ResponsiveContainer>
                         </div>

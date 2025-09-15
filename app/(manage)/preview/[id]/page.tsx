@@ -41,7 +41,7 @@ async function getPostData(id: string): Promise<ApiResponse> {
             return {
                 success: false,
                 statusCode: 404,
-                error: 'Blog post not found'
+                error: 'Report post not found'
             };
         }
 
@@ -99,7 +99,7 @@ export default async function IndividualBlogPost({ params }: { params: { id: str
         return <ErrorMessage message="Author not found" />;
     }
     if (!response.data) {
-        return <ErrorMessage message="Blog post not found" />;
+        return <ErrorMessage message="Report post not found" />;
     }
 
     return (

@@ -72,7 +72,7 @@ export const ProfileCard = ({ userData, editMode, setEditMode }: ProfileCardProp
                     </div>
                     <div className={`p-2 md:p-4 rounded-lg ${isDarkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
                         <p className="text-xl md:text-2xl font-bold">{length}</p>
-                        <p className={`text-xs md:text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-500'}`}>Blogs</p>
+                        <p className={`text-xs md:text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-500'}`}>Reports</p>
                     </div>
                 </div>
                 <div>

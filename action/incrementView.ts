@@ -17,11 +17,11 @@ export default async function incrementViewInDB(blogId: string, like?: boolean, 
             else blog = await Blog.findOne({ slug: blogId });
 
             if (!blog) {
-                throw new Error("Blog not found");
+                throw new Error("Report not found");
             }
             // Increment views of the blog
             if (!like) {
-                await Blog.findOneAndUpdate(
+                await Report.findOneAndUpdate(
                     { slug: blog.slug },
                     { $inc: { views: 1 } }
                 );

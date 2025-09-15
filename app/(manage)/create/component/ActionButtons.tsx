@@ -86,7 +86,7 @@ export const ActionButtons = ({
                     <Send className="w-4 h-4 mr-2" />
                 )}
                 <span>
-                    {mode === 'create' ? 'Create Blog' : 'Update Blog'}
+                    {mode === 'create' ? 'Create Report' : 'Update Report'}
                 </span>
             </Button>
         </div>

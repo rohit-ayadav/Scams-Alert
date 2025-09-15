@@ -59,7 +59,7 @@ const BlogIdeaGenerator = () => {
             ],
             "showcase": [
                 "How I Built a Portfolio Site That Got Me Hired",
-                "Creating a Blog Platform: My Journey and Tech Stack",
+                "Creating a Report Platform: My Journey and Tech Stack",
                 "Building a Weather App with React and OpenWeather API",
                 "Developing an E-commerce Site with Next.js and Stripe"
             ]
@@ -92,7 +92,7 @@ const BlogIdeaGenerator = () => {
             "showcase": [
                 "How I Built an AI Writing Assistant for Technical Documentation",
                 "Creating a Voice-Controlled Smart Home Dashboard",
-                "Building a Recommendation Engine for My Blog",
+                "Building a Recommendation Engine for My Report",
                 "Developing a Code Review Assistant with GPT"
             ]
         }
@@ -154,7 +154,7 @@ const BlogIdeaGenerator = () => {
                     <Card className={`overflow-hidden border-0 ${isDarkMode ? 'bg-gradient-to-br from-blue-900/20 to-purple-900/20' : 'bg-gradient-to-br from-blue-50 to-purple-50'
                         }`}>
                         <CardContent className="p-8">
-                            <h2 className="text-3xl font-bold mb-6 text-center">Need Blog Ideas?</h2>
+                            <h2 className="text-3xl font-bold mb-6 text-center">Need Report Ideas?</h2>
                             <p className="text-center mb-8 text-gray-600 dark:text-gray-300">
                                 Generate relevant blog post ideas based on your interests and preferred content format
                             </p>

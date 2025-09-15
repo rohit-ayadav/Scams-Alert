@@ -417,7 +417,7 @@ const HomePage = ({ posts, users, techNewsPosts, totalLikes, totalViews, totalBl
                                         isDarkMode ? "border-gray-700 text-white" : ""
                                     )}
                                 >
-                                    Explore Blogs <Book className="ml-2 h-4 w-4" />
+                                    Explore Reports <Book className="ml-2 h-4 w-4" />
                                 </Button>
                             </Link>
                         </div>
@@ -434,7 +434,7 @@ const HomePage = ({ posts, users, techNewsPosts, totalLikes, totalViews, totalBl
                 ) : <SectionLoading />}
             </div>
 
-            {/* Featured Blog - Priority 1 */}
+            {/* Featured Report - Priority 1 */}
             {loadPriority1 && (
                 <Suspense fallback={<SectionLoading />}>
                     <FeatureBlog posts={posts} users={users} isDarkMode={isDarkMode} isTechNews={false} />

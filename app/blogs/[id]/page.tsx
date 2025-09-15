@@ -36,7 +36,7 @@ async function getPostData(id: string): Promise<ApiResponse> {
             return {
                 success: false,
                 statusCode: 404,
-                error: 'Blog post not found'
+                error: 'Report post not found'
             };
         }
 
@@ -79,17 +79,17 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 
     if (!response.success || !response.data) {
         return {
-            title: 'Blog Post Not Found - ScamAlert',
+            title: 'Report Post Not Found - ScamAlert',
             description: 'The blog post you are looking for does not exist',
             openGraph: {
-                title: 'Blog Post Not Found - ScamAlert',
+                title: 'Report Post Not Found - ScamAlert',
                 description: 'The blog post you are looking for does not exist',
                 images: ['/default-thumbnail.png'],
                 url: 'https://www.ScamAlert.in',
             },
             twitter: {
                 card: 'summary_large_image',
-                title: 'Blog Post Not Found - ScamAlert',
+                title: 'Report Post Not Found - ScamAlert',
                 description: 'The blog post you are looking for does not exist',
                 images: ['/default-thumbnail.png'],
             },
@@ -97,7 +97,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     }
 
     const postData = response.data;
-    const title = postData?.title || 'ScamAlert Blog Post';
+    const title = postData?.title || 'ScamAlert Report Post';
     const thumbnailUrl = postData?.thumbnail || '/default-thumbnail.png';
     const description = postData?.content.replace(/<[^>]*>?/gm, '').substring(0, 140);
     const url = `https://www.ScamAlert.in/blogs/${response.data.slug}`;
@@ -154,7 +154,7 @@ export default async function IndividualBlogPost({ params }: { params: { id: str
         return <ErrorMessage message="Author not found" />;
     }
     if (!response.data) {
-        return <ErrorMessage message="Blog post not found" />;
+        return <ErrorMessage message="Report post not found" />;
     }
 
     const jsonLd = {

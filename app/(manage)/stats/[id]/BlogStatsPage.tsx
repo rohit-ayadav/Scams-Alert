@@ -124,7 +124,7 @@ const BlogStatsPage = ({ user, data, monthlyStats }: { user: UserType, data: Blo
     if (!data) {
         return (
             <ErrorMessage
-                title="Blog not found"
+                title="Report not found"
                 message="The blog you are trying to view does not exist."
                 variant="default"
             />
@@ -144,7 +144,7 @@ const BlogStatsPage = ({ user, data, monthlyStats }: { user: UserType, data: Blo
                     <Link href={`/blogs/${data.slug}`}>
                         <Button variant="outline">
                             <ExternalLink className="h-4 w-4 mr-2" />
-                            View Blog
+                            View Report
                         </Button>
                     </Link>
                     <Link href={`/edit/${data.slug}`}>
@@ -171,7 +171,7 @@ const BlogStatsPage = ({ user, data, monthlyStats }: { user: UserType, data: Blo
                             <AlertDialogFooter>
                                 <AlertDialogCancel>Cancel</AlertDialogCancel>
                                 <AlertDialogAction className="bg-red-600 hover:bg-red-700">
-                                    Delete Blog
+                                    Delete Report
                                 </AlertDialogAction>
                             </AlertDialogFooter>
                         </AlertDialogContent>
@@ -310,7 +310,7 @@ const BlogStatsPage = ({ user, data, monthlyStats }: { user: UserType, data: Blo
                 </Card>
             </div>
 
-            {/* Blog Details */}
+            {/* Report Details */}
             <BlogDetails data={data} formatDate={formatDate} />
         </div>
     );

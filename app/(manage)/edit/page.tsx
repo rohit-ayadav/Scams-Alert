@@ -41,7 +41,7 @@ const fetchUserBlogs = async () => {
   }
 };
 
-// Blog item component for better organization
+// Report item component for better organization
 const BlogItem = ({ blog }: { blog: BlogPostType }) => (
   <li className="p-4 mb-4 border rounded-lg hover:bg-gray-50 transition-colors">
     <div className="flex items-center justify-between">
@@ -94,12 +94,12 @@ const BlogListingPage = async () => {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">Your Blogs</h1>
+        <h1 className="text-3xl font-bold">Your Reports</h1>
         <Link
           href="/create"
           className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
         >
-          Write New Blog
+          Write New Report
         </Link>
       </div>
 

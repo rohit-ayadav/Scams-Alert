@@ -19,7 +19,7 @@ const Analytics = ({ blogs, monthlyStats, chartData, sortedBlogs, onSortChange, 
     // State for chart type
     const [chartMetric, setChartMetric] = useState<'both' | 'views' | 'likes'>('both');
 
-    // Calculate engagement rates for all blogs
+    // Calculate engagement rates for All Scam Reports
     const blogPerformanceData = sortedBlogs.map(blog => {
         const blogStats = monthlyStats.filter(stat => stat.blog === blog._id);
         const totalViews = blogStats.reduce((sum, stat) => sum + stat.views, 0);
@@ -54,14 +54,14 @@ const Analytics = ({ blogs, monthlyStats, chartData, sortedBlogs, onSortChange, 
                             value={chartMetric}
                             onValueChange={handleChartMetricChange}
                         >
-                        <SelectTrigger className="w-full sm:w-[180px]">
-                            <SelectValue placeholder="Chart metrics" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="both">Views & Likes</SelectItem>
-                            <SelectItem value="views">Views Only</SelectItem>
-                            <SelectItem value="likes">Likes Only</SelectItem>
-                        </SelectContent>
+                            <SelectTrigger className="w-full sm:w-[180px]">
+                                <SelectValue placeholder="Chart metrics" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="both">Views & Likes</SelectItem>
+                                <SelectItem value="views">Views Only</SelectItem>
+                                <SelectItem value="likes">Likes Only</SelectItem>
+                            </SelectContent>
                         </Select>
                     </div>
                 </CardHeader>
@@ -126,7 +126,7 @@ const Analytics = ({ blogs, monthlyStats, chartData, sortedBlogs, onSortChange, 
                     <div>
                         <CardTitle className="text-lg sm:text-xl">Top Performing Posts</CardTitle>
                         <CardDescription>
-                            Your most viewed and liked blog posts
+                            Your most viewed and liked report posts
                         </CardDescription>
                     </div>
                     <Select value={sortBy} onValueChange={onSortChange}>
@@ -180,8 +180,8 @@ const Analytics = ({ blogs, monthlyStats, chartData, sortedBlogs, onSortChange, 
                                         </td>
                                         <td className="px-3 sm:px-6 py-2 sm:py-4">
                                             <div className={`text-xs sm:text-sm ${blog.engagement > 5 ? 'text-green-600 dark:text-green-400' :
-                                                    blog.engagement > 2 ? 'text-amber-600 dark:text-amber-400' :
-                                                        'text-red-600 dark:text-red-400'
+                                                blog.engagement > 2 ? 'text-amber-600 dark:text-amber-400' :
+                                                    'text-red-600 dark:text-red-400'
                                                 }`}>
                                                 {blog.engagement}%
                                             </div>

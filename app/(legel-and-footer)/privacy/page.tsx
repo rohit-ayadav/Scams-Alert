@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
     const policyData = [
         {
             title: "1. Information We Collect",
-            content: "ScamAlert collects information necessary to provide our services to developers and bloggers. This includes: (a) Account Information: your name, email address, username, password, and profile information; (b) Content Data: blog posts, code snippets, comments, and other content you create; (c) Usage Data: information about how you use our platform, including IP address, browser type, operating system, referring URLs, page views, and actions taken on the platform; (d) Technical Data: analytics, cookies, and similar technologies that automatically collect information about your devices and browsing actions. We collect information in compliance with applicable data protection laws and only what is necessary to provide our services."
+            content: "ScamAlert collects information necessary to provide our services to developers and bloggers. This includes: (a) Account Information: your name, email address, username, password, and profile information; (b) Content Data: report posts, code snippets, comments, and other content you create; (c) Usage Data: information about how you use our platform, including IP address, browser type, operating system, referring URLs, page views, and actions taken on the platform; (d) Technical Data: analytics, cookies, and similar technologies that automatically collect information about your devices and browsing actions. We collect information in compliance with applicable data protection laws and only what is necessary to provide our services."
         },
         {
             title: "2. How We Use Your Information",

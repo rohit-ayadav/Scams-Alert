@@ -7,7 +7,7 @@ const BlogDetails = ({ data, formatDate }: { data: BlogPostType; formatDate: (da
     return (
         <Card className="w-full">
             <CardHeader>
-                <CardTitle>Blog Details</CardTitle>
+                <CardTitle>Report Details</CardTitle>
             </CardHeader>
             <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

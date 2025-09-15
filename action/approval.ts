@@ -31,7 +31,7 @@ const ApproveBlog = async (blogId: string, sendNotification: boolean, status: st
     if (!blogId) {
         return {
             message: "",
-            error: "Blog ID is required",
+            error: "Report ID is required",
         };
     }
     const query: Query = isValidObjectId(blogId)
@@ -43,7 +43,7 @@ const ApproveBlog = async (blogId: string, sendNotification: boolean, status: st
         if (!blog) {
             return {
                 message: "",
-                error: "Blog not found",
+                error: "Report not found",
             };
         }
 
@@ -54,7 +54,7 @@ const ApproveBlog = async (blogId: string, sendNotification: boolean, status: st
             await blog.save();
             await sendEmail({
                 to: blog.createdBy,
-                subject: "Congratulations! Your Blog is Approved | ScamAlert",
+                subject: "Congratulations! Your Report is Approved | ScamAlert",
                 message: BlogApproved(AuthorName, blog.title, `https://ScamAlert.com/blog/${blog.slug}`),
             });
 
@@ -62,7 +62,7 @@ const ApproveBlog = async (blogId: string, sendNotification: boolean, status: st
                 const subscriptions = await Notification.find({});
                 if (subscriptions.length) {
                     const payload = {
-                        title: `New Blog Post: ${blog.title}`,
+                        title: `New Report Post: ${blog.title}`,
                         body: `A new blog post "${blog.title}" has been published`,
                         image: blog.thumbnail,
                         icon: "/favicon.ico",
@@ -90,7 +90,7 @@ const ApproveBlog = async (blogId: string, sendNotification: boolean, status: st
             }
 
             return {
-                message: `Blog approved successfully`,
+                message: `Report approved successfully`,
                 error: null,
             };
         }
@@ -100,12 +100,12 @@ const ApproveBlog = async (blogId: string, sendNotification: boolean, status: st
             await blog.save();
             await sendEmail({
                 to: blog.createdBy,
-                subject: "Blog Rejected | ScamAlert",
+                subject: "Report Rejected | ScamAlert",
                 message: BlogRejected("Author", blog.title, reason, `https://ScamAlert.com/dashboard`),
             });
 
             return {
-                message: "Blog rejected successfully",
+                message: "Report rejected successfully",
                 error: null,
             };
         }
@@ -162,7 +162,7 @@ export const handleFromUserDashboard = async (action: string, blogId: string) =>
         if (!blog) {
             return {
                 message: "",
-                error: "Blog not found",
+                error: "Report not found",
             };
         }
 
@@ -171,34 +171,34 @@ export const handleFromUserDashboard = async (action: string, blogId: string) =>
                 blog.status = 'deleted';
                 await blog.save();
                 return {
-                    message: "Blog deleted successfully",
+                    message: "Report deleted successfully",
                     error: null,
                 };
             case 'permanent-delete':
-                await Blog.deleteOne({ _id: blog._id });
+                await Report.deleteOne({ _id: blog._id });
                 return {
-                    message: "Blog permanently deleted successfully",
+                    message: "Report permanently deleted successfully",
                     error: null,
                 };
             case 'archive':
                 blog.status = 'archived';
                 await blog.save();
                 return {
-                    message: "Blog archived successfully",
+                    message: "Report archived successfully",
                     error: null,
                 };
             case 'restore':
                 blog.status = 'pending_review';
                 await blog.save();
                 return {
-                    message: "Blog restored successfully",
+                    message: "Report restored successfully",
                     error: null,
                 };
             case 'request-publish':
                 blog.status = 'pending_review';
                 await blog.save();
                 return {
-                    message: "Blog requested for publish successfully",
+                    message: "Report requested for publish successfully",
                     error: null,
                 };
                 break;
@@ -206,7 +206,7 @@ export const handleFromUserDashboard = async (action: string, blogId: string) =>
                 blog.status = 'pending_review';
                 await blog.save();
                 return {
-                    message: "Blog submitted for approval successfully",
+                    message: "Report submitted for approval successfully",
                     error: null,
                 };
                 break;
@@ -214,7 +214,7 @@ export const handleFromUserDashboard = async (action: string, blogId: string) =>
                 blog.status = 'pending_review';
                 await blog.save();
                 return {
-                    message: "Blog requested for public successfully",
+                    message: "Report requested for public successfully",
                     error: null,
                 };
                 break;
@@ -222,7 +222,7 @@ export const handleFromUserDashboard = async (action: string, blogId: string) =>
                 blog.status = 'private';
                 await blog.save();
                 return {
-                    message: "Blog made private successfully",
+                    message: "Report made private successfully",
                     error: null,
                 };
                 break;
@@ -230,7 +230,7 @@ export const handleFromUserDashboard = async (action: string, blogId: string) =>
                 blog.status = 'private';
                 await blog.save();
                 return {
-                    message: "Blog unarchived successfully",
+                    message: "Report unarchived successfully",
                     error: null,
                 };
                 break;

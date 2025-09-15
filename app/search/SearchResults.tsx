@@ -77,7 +77,7 @@ function BlogResult({ result }: { result: any }) {
                     <div className="flex-shrink-0 w-full sm:w-auto">
                         <img
                             src={result.thumbnail}
-                            alt={result.title || "Blog thumbnail"}
+                            alt={result.title || "Report thumbnail"}
                             className="w-full sm:w-24 md:w-32 h-40 sm:h-20 md:h-24 rounded-md object-cover"
                         />
                     </div>
