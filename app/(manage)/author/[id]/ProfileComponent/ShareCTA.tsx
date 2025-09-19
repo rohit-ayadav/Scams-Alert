@@ -5,20 +5,20 @@ import { Author } from './ProfileNew'
 import { Facebook, Linkedin, Share2 } from 'lucide-react'
 import { Twitter } from 'react-feather'
 
-const ShareCTA = ({ author, copyProfileLink }: { author: Author; copyProfileLink: () => void }) => {
+const ShareCTA = ({ author, copyProfileLink, copied, setCopied }: { author: Author; copyProfileLink: () => void; copied: boolean; setCopied: (value: boolean) => void }) => {
     return (
         <div>
             <Card className="border-0 shadow-lg dark:bg-gray-800 dark:border-gray-700 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30">
                 <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row items-center gap-6">
                         <div className="flex-1">
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Share This Profile</h3>
+                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Share Profile</h3>
                             <p className="text-gray-600 dark:text-gray-300 mb-4">
-                                If you found {author.name}'s content valuable, consider sharing their profile with others.
+                                Found {author.name}'s reports helpful? Share their profile to help others discover valuable insights.
                             </p>
                             <div className="flex gap-3">
                                 <Button
-                                    onClick={() => window.open(`https://twitter.com/intent/tweet?text=Check out ${author.name}'s developer profile&url=${encodeURIComponent(`${window.location.origin}/author/${author.username}`)}`, '_blank')}
+                                    onClick={() => window.open(`https://twitter.com/intent/tweet?text=Check out ${author.name}'s reports profile&url=${encodeURIComponent(`${window.location.origin}/author/${author.username}`)}`, '_blank')}
                                     variant="outline"
                                     size="icon"
                                     className="bg-transparent text-[#1DA1F2] border-[#1DA1F2] hover:bg-[#1DA1F2]/10"
@@ -46,7 +46,7 @@ const ShareCTA = ({ author, copyProfileLink }: { author: Author; copyProfileLink
                                     variant="outline"
                                     className="bg-transparent"
                                 >
-                                    Copy Link
+                                    {copied ? 'Link Copied!' : 'Copy Link'}
                                 </Button>
                             </div>
                         </div>

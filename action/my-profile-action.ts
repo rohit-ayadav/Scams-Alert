@@ -137,10 +137,10 @@ export async function isAdmin(email: string) {
         await connectDB();
         const user = await User.findOne({ email }).select("role").lean().exec() as { role: string } | null;
         if (!user) {
-            throw new Error("User not found");
+            throw new Error("User not found, please sign up");
         }
         if (user.role !== "admin") {
-            throw new Error("User is not admin");
+            throw new Error("Only admin can perform this action");
         }
         return true;
     }

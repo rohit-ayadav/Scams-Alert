@@ -1,9 +1,9 @@
-import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useState, useMemo } from 'react'
 import { useTheme } from '@/context/ThemeContext';
 import { BlogPostType } from '@/types/blogs-types';
 import { Author } from './ProfileNew';
+import { toast } from 'react-toastify';
 
 const useProfile = ({ authorPosts, author }: { authorPosts: BlogPostType[], author: Author }) => {
     const { isDarkMode, toggleDarkMode } = useTheme();
@@ -13,6 +13,7 @@ const useProfile = ({ authorPosts, author }: { authorPosts: BlogPostType[], auth
     const [sortBy, setSortBy] = useState('recent');
     const [activeTab, setActiveTab] = useState('posts');
     const [isShareSheetOpen, setIsShareSheetOpen] = useState(false);
+    const [copied, setCopied] = useState(false);
 
     const filteredAndSortedPosts = useMemo(() => {
         let filtered = authorPosts.filter(post =>
@@ -56,10 +57,17 @@ const useProfile = ({ authorPosts, author }: { authorPosts: BlogPostType[], auth
     const copyProfileLink = () => {
         const shareUrl = `${window.location.origin}/author/${author.username}`;
         navigator.clipboard.writeText(shareUrl)
-            .then(() => alert('Profile link copied to clipboard!'))
+            .then(() => {
+                toast.success('Profile link copied to clipboard!');
+                setCopied(true);
+                setTimeout(() => {
+                    setCopied(false);
+                }, 3000);
+            })
             .catch(err => console.error('Could not copy text: ', err));
         setIsShareSheetOpen(false);
     };
+
     return {
         isDarkMode,
         toggleDarkMode,
@@ -78,6 +86,8 @@ const useProfile = ({ authorPosts, author }: { authorPosts: BlogPostType[], auth
         categories,
         totalStats,
         copyProfileLink,
+        copied,
+        setCopied
     }
 }
 

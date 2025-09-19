@@ -13,17 +13,18 @@ const NotificationAdminPanel = () => {
     const [statistics, setStatistics] = useState<GlobalStatistics | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [notification, setNotification] = useState<NotificationPayload>({
-        title: "Welcome! 👋",
-        message: "Your notifications are now set up successfully. Click to explore more.",
+        title: "Stay Alert 🚨",
+        message: "New scam reports are live! Read real experiences and protect yourself today.",
         icon: "https://as1.ftcdn.net/v2/jpg/09/15/85/08/1000_F_915850846_PYB5ChOp6ZVc0KGouKNKicwFNolwd5nZ.jpg",
-        ttl: 86400,
-        urgency: "normal",
+        ttl: 86400, // 1 day
+        urgency: "high",
         vibrate: true,
         requireInteraction: true,
-        renotify: false,
+        renotify: true,
         silent: false,
         url: "https://scams-alert.vercel.app/reports"
     });
+
 
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>

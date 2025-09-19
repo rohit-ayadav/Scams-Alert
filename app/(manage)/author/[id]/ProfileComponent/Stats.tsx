@@ -5,7 +5,6 @@ import { formatDate } from '@/utils/date-formatter';
 import { BlogPostType } from '@/types/blogs-types';
 import { Author } from './ProfileNew';
 
-
 const StatsAuthorPage = ({ authorPosts, totalStats, categories }: { authorPosts: BlogPostType[], author: Author, totalStats: { views: number, likes: number }, categories: string[] }) => {
     return (
         <div>
@@ -34,7 +33,7 @@ const StatsAuthorPage = ({ authorPosts, totalStats, categories }: { authorPosts:
 
                 <Card className="border-0 shadow-md dark:bg-gray-800 dark:border-gray-700">
                     <CardHeader className="pb-2">
-                        <CardTitle className="text-lg font-medium">Top Categories</CardTitle>
+                        <CardTitle className="text-lg font-medium">Popular Topics</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <div className="space-y-4">
@@ -66,7 +65,7 @@ const StatsAuthorPage = ({ authorPosts, totalStats, categories }: { authorPosts:
 
                 <Card className="border-0 shadow-md dark:bg-gray-800 dark:border-gray-700 md:col-span-2">
                     <CardHeader className="pb-2">
-                        <CardTitle className="text-lg font-medium">Top Performing Posts</CardTitle>
+                        <CardTitle className="text-lg font-medium">Top Trending Reports</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <div className="overflow-x-auto">

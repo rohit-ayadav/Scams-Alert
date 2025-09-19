@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useTheme } from '@/context/ThemeContext';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
+import { isValidEmail } from '@/lib/common-function';
 
 const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,18 +33,14 @@ const Footer = () => {
       behavior: 'smooth'
     });
   };
-  const validateEmail = (email: string) => {
-    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(email);
-  };
 
   const handleSubscribe = async (event: React.FormEvent) => {
     event.preventDefault();
     setIsLoading(true);
 
     try {
-      if (!validateEmail(email)) {
-        throw new Error("Please enter a valid email address");
+      if (!isValidEmail(email)) {
+        throw new Error("Please 2 enter a valid email address");
       }
 
       const response = await fetch("/api/subscribe", {
@@ -195,20 +192,21 @@ const Footer = () => {
               <p className="text-sm mb-4 opacity-85">
                 Subscribe to our newsletter for the latest updates and articles.
               </p>
-              <form className="space-y-2" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-2" onSubmit={handleSubscribe}>
                 <input
                   type="email"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:border-blue-500 text-sm"
                   aria-label="Email subscription"
                 />
                 <button
                   type="submit"
-                  onClick={handleSubscribe}
                   disabled={isLoading}
                   className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200 text-sm font-medium"
                 >
-                  Subscribe
+                  {isLoading ? "Subscribing..." : "Subscribe"}
                 </button>
               </form>
             </div>

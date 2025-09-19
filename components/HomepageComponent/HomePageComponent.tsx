@@ -381,7 +381,7 @@ const HomePage = ({ posts, users, totalLikes, totalViews, totalBlogs, totalUsers
                                 "bg-gradient-to-r from-blue-400 to-indigo-400" :
                                 "bg-gradient-to-r from-blue-600 to-indigo-600"
                         )}>
-                            Where People Share Scam Experiences
+                            Where Victims Unite Against Scams
                         </h1>
                         <p className={cn(
                             "text-xl mb-8 max-w-3xl mx-auto",
@@ -395,7 +395,7 @@ const HomePage = ({ posts, users, totalLikes, totalViews, totalBlogs, totalUsers
                         </div>
 
                         <div className="mt-12 space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row justify-center">
-                            <Link href="/write" prefetch={false}>
+                            <Link href="/create" prefetch={false}>
                                 <Button
                                     size="lg"
                                     className={cn(
@@ -474,7 +474,7 @@ const HomePage = ({ posts, users, totalLikes, totalViews, totalBlogs, totalUsers
                             title="Share Your Scam Experience"
                             description="Report scams in a safe, blog-style format. Help others stay alert by sharing your story, evidence, and lessons learned."
                             action="Submit a Report"
-                            link="/write"
+                            link="/create"
                             isDarkMode={isDarkMode}
                         />
                         <FeatureCard
@@ -490,7 +490,7 @@ const HomePage = ({ posts, users, totalLikes, totalViews, totalBlogs, totalUsers
                             title="Build a Safer Community"
                             description="Join thousands of people helping to expose scams. Together, we make the internet a safer place for everyone."
                             action="Join Our Community"
-                            link="https://whatsapp.com/channel/0029VaVd6px8KMqnZk7qGJ2t"
+                            link="https://t.me/Scamsalertawareness"
                             isDarkMode={isDarkMode}
                             isExternal={true}
                         />

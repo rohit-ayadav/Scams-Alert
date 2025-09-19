@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { PenTool } from 'react-feather';
 import { motion } from 'framer-motion';
 import { useToast } from '@/hooks/use-toast';
-import { cn } from '@/lib/utils'; // Assuming you have this utility
+import { cn } from '@/lib/utils';
 
 export const NewsletterSection = () => {
     const { isDarkMode } = useTheme();
@@ -76,13 +76,13 @@ export const NewsletterSection = () => {
                                 )}>
                                     <PenTool size={32} />
                                 </div>
-                                <h3 className="text-3xl font-bold mb-4">Stay in the Loop</h3>
+                                <h3 className="text-3xl font-bold mb-4">Stay Alert</h3>
                                 <p className={cn(
                                     "mb-8 max-w-lg mx-auto",
                                     isDarkMode ? "text-gray-300" : "text-gray-600"
                                 )}>
-                                    Subscribe to our weekly newsletter and get the latest tech articles,
-                                    job opportunities, and coding tips delivered straight to your inbox.
+                                    Subscribe to our newsletter and receive the latest scam alerts, safety tips, and community updates
+                                    to help you stay protected.
                                 </p>
 
                                 <form onSubmit={handleSubscribe} className="w-full max-w-md mx-auto">

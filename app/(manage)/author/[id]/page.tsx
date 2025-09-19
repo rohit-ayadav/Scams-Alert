@@ -48,16 +48,16 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 
     if (!response || !response.success || !response.author) {
         return {
-            title: "Author Not Found | ScamAlert",
-            description: "The requested author profile could not be found on ScamAlert. Explore expert developer blogs, coding insights, and web development trends.",
+            title: "Reporter Not Found | ScamAlert",
+            description: "The requested reporter profile could not be found on ScamAlert. Explore verified scam reports and community-shared experiences.",
             openGraph: {
-                title: "Author Not Found",
-                description: "This author does not exist or has not published any posts. Discover top programming blogs and tech articles on ScamAlert.",
+                title: "Reporter Not Found",
+                description: "This reporter does not exist or has not submitted any scam reports. Discover scam awareness resources and safety guides on ScamAlert.",
                 images: [{ url: "/default-profile.jpg", width: 1200, height: 630 }]
             },
             other: {
                 "robots": "noindex, follow",
-                "keywords": "developer blogs, programming articles, web development, coding tutorials"
+                "keywords": "scam reports, fraud awareness, scam prevention, community reports, scam alert platform"
             }
         };
     }
@@ -69,10 +69,10 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
         return words.length > 2 ? `${words.slice(0, 2).join(" ")}...` : name;
     }
 
-    const authorName = formatAuthorName(author.name);
-    const description = `${author.name}'s expert blogs on web development, JavaScript, React and modern tech. Quality coding insights on ScamAlert.`;
-    const url = `https://scams-alert.vercel.app/author/${author.username}`;
-    let thumbnail
+    const reporterName = formatAuthorName(author.name);
+    const description = `${author.name}'s scam reports and shared experiences on ScamAlert. Stay informed and avoid scams with trusted community insights.`;
+    const url = `https://scamalert.in/reporter/${author.username}`;
+    let thumbnail;
     if (isValidUrl(author.image))
         thumbnail = author.image;
     else if (author.image && !isValidUrl(author.image))
@@ -82,11 +82,11 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     const lastUpdated = new Date(author?.updatedAt ?? new Date()).toISOString();
 
     return {
-        title: `${authorName} - Expert Dev Reports & Coding Tutorials | ScamAlert`,
+        title: `${reporterName} - Scam Reports & Community Insights | ScamAlert`,
         description,
-        keywords: "developer blogs, programming articles, web development, coding tutorials",
+        keywords: "scam reports, fraud awareness, scam prevention, community reports, ScamAlert",
         openGraph: {
-            title: `🔥 ${authorName}’s Best Coding Reports & Developer Tips | ScamAlert`,
+            title: `🛡️ ${reporterName}’s Scam Reports & Safety Tips | ScamAlert`,
             description,
             url,
             siteName: "ScamAlert",
@@ -98,7 +98,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
             card: "summary_large_image",
             site: "@ScamAlert",
             creator: `@${author.username}`,
-            title: `${authorName} - Dev Reports & Tech Tutorials`,
+            title: `${reporterName} - Scam Reports & Community Alerts`,
             description,
             images: [{ url: thumbnail }]
         },
@@ -112,7 +112,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
             "og:profile:username": author.username,
             "profile:last_updated": lastUpdated,
             "article:author": author.name,
-            "profile:tagline": author.bio || "Tech Blogger & Developer"
+            "profile:tagline": author.bio || "Scam Reporter & Community Member"
         }
     };
 }
@@ -131,23 +131,24 @@ export default async function IndividualProfile({ params }: { params: { id: stri
     const response = await getPostData(params.id);
 
     if (!response || !response.success) {
-        switch (response.statusCode) {
+        switch (response?.statusCode) {
             case 404:
-                return <ErrorMessage message="Author not found" />;
+                return <ErrorMessage message="Reporter not found" />;
             case 403:
-                return <ErrorMessage message="You don't have permission to view this blog post" />;
+                return <ErrorMessage message="You don't have permission to view this report" />;
             case 401:
-                return <ErrorMessage message="Please login to view this blog post" />;
+                return <ErrorMessage message="Please login to view this report" />;
             default:
-                return <ErrorMessage message={response.error || 'Failed to load blog post'} />;
+                return <ErrorMessage message={response?.error || 'Failed to load report'} />;
         }
     }
 
     if (!response.data) {
-        return <ErrorMessage message="No posts found for this author" />;
+        return <ErrorMessage message="No reports found for this reporter" />;
     }
+
     if (!response.author) {
-        return <ErrorMessage message="Author not found" />;
+        return <ErrorMessage message="Reporter not found" />;
     }
 
     // return <AuthorPage author={response.author} authorPosts={response.data} />;

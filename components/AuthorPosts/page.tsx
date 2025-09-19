@@ -59,9 +59,7 @@ const AuthorPosts = ({ author, posts, isDarkMode, error, loading }: AuthorPostsP
                                 : 'text-gray-500'
                             }
                         `}
-                    >
-                        More posts from this author
-                    </p>
+                    >More reports from this user</p>
                 </div>
             </div>
 
@@ -69,7 +67,7 @@ const AuthorPosts = ({ author, posts, isDarkMode, error, loading }: AuthorPostsP
             <div className="space-y-4">
                 {!loading && posts.length === 0 && (
                     <p className="text-gray-500 dark:text-gray-400">
-                        No more posts from this author
+                        No more reports from this user.
                     </p>
                 )}
                 {posts.slice(0, 5).map((post) => (
@@ -118,7 +116,7 @@ const AuthorPosts = ({ author, posts, isDarkMode, error, loading }: AuthorPostsP
                     }
                 `}
             >
-                View all posts
+                View all reports
                 <ArrowRight className="h-4 w-4 ml-1" />
             </Link>
         </div >

@@ -62,10 +62,10 @@ const SignupContainer: FC = () => {
 
                             {/* Features List */}
                             <div className="space-y-4 mb-8">
-                                <BrandFeature text="Write and share technical articles" />
-                                <BrandFeature text="Connect with fellow developers" />
-                                <BrandFeature text="Build your tech portfolio" />
-                                <BrandFeature text="Stay updated with latest trends" />
+                                <BrandFeature text="Report and share scam experiences" />
+                                <BrandFeature text="Connect with others and raise awareness" />
+                                <BrandFeature text="Help build a safer online community" />
+                                <BrandFeature text="Stay updated with the latest scam alerts" />
                             </div>
 
                             {/* Social Proof */}
@@ -74,13 +74,13 @@ const SignupContainer: FC = () => {
                                     }`}>
                                     <div className="flex justify-between mb-2">
                                         <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'
-                                            }`}>Active Writers</div>
+                                            }`}>Active Reporters</div>
                                         <div className={`text-sm font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'
                                             }`}>10K+</div>
                                     </div>
                                     <div className="flex justify-between mb-4">
                                         <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'
-                                            }`}>Articles Published</div>
+                                            }`}>Scam Reports Shared</div>
                                         <div className={`text-sm font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'
                                             }`}>50K+</div>
                                     </div>
@@ -122,7 +122,7 @@ const SignupContainer: FC = () => {
                             <div className="mt-4 text-center">
                                 <p className={`text-xs flex items-center justify-center gap-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'
                                     }`}>
-                                    <span>Trusted by developers worldwide</span>
+                                    <span>Trusted by people worldwide</span>
                                     <Globe className="w-3 h-3" />
                                 </p>
                             </div>
@@ -140,15 +140,15 @@ const SignupContainer: FC = () => {
                                 Why join ScamAlert?
                             </h3>
                             <div className="grid grid-cols-2 gap-3">
-                                <BrandFeature text="Write & share articles" />
-                                <BrandFeature text="Connect with devs" />
-                                <BrandFeature text="Build your portfolio" />
+                                <BrandFeature text="Report & share scams" />
+                                <BrandFeature text="Connect with others" />
+                                <BrandFeature text="Help build a safer community" />
                                 <BrandFeature text="Stay updated" />
                             </div>
                             <div className="mt-4 text-center">
                                 <p className={`text-xs flex items-center justify-center gap-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'
                                     }`}>
-                                    <span>Joined by 10K+ developers worldwide</span>
+                                    <span>Joined by 10K+ people worldwide</span>
                                     <Globe className="w-3 h-3" />
                                 </p>
                             </div>

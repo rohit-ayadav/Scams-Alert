@@ -18,7 +18,7 @@ const Newsletter = () => {
     useEffect(() => {
         document.body.classList.toggle('dark', isDarkMode);
     }, [isDarkMode]);
-    
+
     const validateEmail = (email: string) => {
         const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return re.test(email);
@@ -80,7 +80,7 @@ const Newsletter = () => {
 
             <AlertDescription>
                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                    Subscribe to our newsletter for the latest updates, articles, and resources.
+                    Subscribe to our newsletter for the latest scam reports, alerts, and safety tips.
                 </p>
 
                 <form onSubmit={handleSubscribe} className="mt-4 flex flex-col sm:flex-row gap-3">

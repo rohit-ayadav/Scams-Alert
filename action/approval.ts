@@ -55,23 +55,23 @@ const ApproveBlog = async (blogId: string, sendNotification: boolean, status: st
             await sendEmail({
                 to: blog.createdBy,
                 subject: "Congratulations! Your Report is Approved | ScamAlert",
-                message: BlogApproved(AuthorName, blog.title, `https://ScamAlert.com/blog/${blog.slug}`),
+                message: BlogApproved(AuthorName, blog.title, `https://scams-alert.vercel.app/blog/${blog.slug}`),
             });
 
             if (sendNotification) {
                 const subscriptions = await Notification.find({});
                 if (subscriptions.length) {
                     const payload = {
-                        title: `New Report Post: ${blog.title}`,
-                        body: `A new blog post "${blog.title}" has been published`,
+                        title: `New Scam Report: ${blog.title}`,
+                        body: `A new scam report "${blog.title}" has been shared by our community`,
                         image: blog.thumbnail,
                         icon: "/favicon.ico",
-                        tag: "new-blog-post",
+                        tag: "new-scam-report",
                         data: {
                             url: `/reports/${blog.slug}`
                         },
                         actions: [
-                            { action: "open", title: "Open" },
+                            { action: "open", title: "View Report" },
                             { action: "close", title: "Dismiss" }
                         ]
                     };
@@ -101,7 +101,7 @@ const ApproveBlog = async (blogId: string, sendNotification: boolean, status: st
             await sendEmail({
                 to: blog.createdBy,
                 subject: "Report Rejected | ScamAlert",
-                message: BlogRejected("Author", blog.title, reason, `https://ScamAlert.com/dashboard`),
+                message: BlogRejected("Author", blog.title, reason, `https://scams-alert.vercel.app/dashboard`),
             });
 
             return {

@@ -80,6 +80,12 @@ const CategoryBrowser = () => {
             gradient: "from-gray-500 to-slate-600"
         },
         {
+            value: "physicalscam",
+            label: "Physical / In-Person Scam",
+            icon: <ShieldAlert size={24} />,
+            gradient: "from-yellow-500 to-orange-600"
+        },
+        {
             value: "others",
             label: "Others",
             icon: <AlertTriangle size={24} />,

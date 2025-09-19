@@ -24,13 +24,13 @@ const Header = ({ author, isDarkMode, toggleDarkMode, isShareSheetOpen, setIsSha
 
         if (navigator.share) {
             navigator.share({
-                title: `${author.name}'s Developer Profile`,
-                text: `Check out ${author.name}'s developer profile on ScamAlert`,
+                title: `${author.name}'s Scam Report`,
+                text: `Read ${author.name}'s scam report on ScamAlert and help stay alert!`,
                 url: shareUrl,
             }).catch((error) => console.log('Error sharing', error));
         } else {
             navigator.clipboard.writeText(shareUrl)
-                .then(() => alert('Profile link copied to clipboard!'))
+                .then(() => alert('Report link copied to clipboard!'))
                 .catch(err => console.error('Could not copy text: ', err));
         }
     };
@@ -104,7 +104,7 @@ const Header = ({ author, isDarkMode, toggleDarkMode, isShareSheetOpen, setIsSha
                                         <Linkedin className="h-5 w-5" />
                                     </Button>
                                     <Button
-                                        onClick={() => window.open(`https://wa.me/?text=${encodeURIComponent(`🚀 Check out this amazing author on ScamAlert! 📖\n\n${window.location.origin}/author/${author.username}\n\nThey write insightful blogs on various topics. Have a look! 🔥`)}`, '_blank')}
+                                        onClick={() => window.open(`https://wa.me/?text=${encodeURIComponent(`⚠️ Check out this scam report on ScamAlert! 📝\n\n${window.location.origin}/author/${author.username}\n\nHelp others stay alert by reading this report. Stay safe! 🔒`)}`, '_blank')}
                                         variant="outline"
                                         size="icon"
                                         className="bg-transparent text-[#25D366] border-[#25D366] hover:bg-[#25D366]/10"

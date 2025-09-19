@@ -47,7 +47,7 @@ const FeatureBlog = ({ posts, users, isDarkMode }: { posts: BlogPostType[], user
                                 "mt-2 text-base max-w-xl",
                                 isDarkMode ? "text-gray-300" : "text-gray-600"
                             )}>
-                                Hand-picked articles from our top contributors that shouldn't be missed
+                                Must-read scam reports from our trusted contributors
                             </p>
                         </div>
                         <Link href={"/reports"}>
@@ -127,7 +127,7 @@ const FeatureBlog = ({ posts, users, isDarkMode }: { posts: BlogPostType[], user
                                             "hover:bg-gray-100"
                                     )}
                                 >
-                                    {"Explore More"}
+                                    Explore More
                                 </Button>
                             </Link>
                         </div>

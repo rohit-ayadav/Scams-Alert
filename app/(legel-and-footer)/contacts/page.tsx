@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { sendEmail } from '@/action/email/SendEmail';
 import { confirmationToUser, copyToAdmin } from '@/utils/EmailTemplate/contact-email';
+import { FaTelegram } from 'react-icons/fa';
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -120,10 +121,10 @@ const ContactPage = () => {
                                 <Mail className="mr-2" /> <span>rohitkuyada@gmail.com</span>
                             </div>
                             <div className="flex items-center">
-                                <Phone className="mr-2" /> <span>+91 (639) 217-7974</span>
+                                <Phone className="mr-2" /> <span>+91 93699 79063</span>
                             </div>
                             <div className="flex items-center">
-                                <MapPin className="mr-2" /> <span>421, 3rd Floor, Uttardhauna, Tiwariganj, Chinhat, Lucknow 226028</span>
+                                <MapPin className="mr-2" /> <span>New Delhi, India, 110092</span>
                             </div>
                         </CardContent>
                     </Card>
@@ -141,6 +142,9 @@ const ContactPage = () => {
                             </a>
                             <a href="https://www.linkedin.com/company/102726275" className="text-pink-500 hover:text-pink-600">
                                 <Instagram size={24} />
+                            </a>
+                            <a href='https://t.me/Scamsalertawareness' className="text-green-500 hover:text-green-600">
+                                <FaTelegram size={24} />
                             </a>
                         </CardContent>
                     </Card>

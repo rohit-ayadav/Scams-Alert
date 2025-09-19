@@ -33,7 +33,7 @@ const RelatedPosts = ({ posts, isDarkMode, error, loading }: RelatedPostsProps) 
               }`}
           />
           <h3 className="font-semibold text-gray-900 dark:text-white">
-            Related Posts
+            Similar Scam Cases
           </h3>
         </div>
       </div>
@@ -119,7 +119,7 @@ const RelatedPosts = ({ posts, isDarkMode, error, loading }: RelatedPostsProps) 
             }
           `}
         >
-          View more related posts
+          View more related reports
           <ArrowRight className="h-4 w-4 ml-1" />
         </Link>
       )}

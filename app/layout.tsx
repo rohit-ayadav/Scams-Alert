@@ -28,10 +28,9 @@ const geistMono = localFont({
   weight: "100 900",
   display: "swap",
 });
-
 export async function generateMetadata({
-  title = "ScamAlert - The Ultimate Blogging Platform for Developers",
-  description = "Write, publish & grow your tech blog with ScamAlert. 🚀 A feature-rich, customizable blogging platform built for developers using Next.js & TypeScript.",
+  title = "ScamAlert - Share & Discover Scam Reports",
+  description = "Report scams, frauds, and online cheating cases. 🚨 ScamAlert helps people share their experiences, raise awareness, and stay safe from fraud.",
   slug = "",
   imageUrl = "https://scams-alert.vercel.app/default-thumbnail.png",
   canonicalUrl = "https://scams-alert.vercel.app",
@@ -46,13 +45,14 @@ export async function generateMetadata({
 
   return {
     title,
-    keywords: "blogging, developer, blog, next.js, react, typescript, mongodb, vercel, nextjs, next,js, next-js, next.js blog, next.js blogging, next.js blog website, next.js blog platform, next.js blog app, next.js blog template, next.js blog example, next.js blog post, next.js blog tutorial, next.js blog website template, next.js blog website example, next.js blog website tutorial, next.js blog website project, next.js blog website code, next.js blog website design, next.js blog website development, next.js blog website app, next.js blog website platform, next.js blog website features, next.js blog website interface, next.js blog website user-friendly, next.js blog website customizable, next.js blog website interactive, next.js blog website share, next.js blog website update, next.js blog website create, next.js blog website effortlessly, next.js blog website diverse, next.js blog website topics, next.js blog website built, next.js blog website explore,ScamAlert, Scam Alert, Developer Blogger, Scam Report, Developer Report, Report for Developers, Blogging",
+    keywords:
+      "scam report, online fraud, scam alert, fraud awareness, phishing, cyber crime, fraud report, report scam, fake jobs, investment scams, online safety, cheating report, fraud prevention, community reports, scam victims, online fraud safety",
     description,
     manifest: "/manifest.json?v=1.0.6",
     appleWebApp: {
       capable: true,
       statusBarStyle: "black",
-      title: "Report Website",
+      title: "ScamAlert",
     },
     applicationName: "ScamAlert",
     formatDetection: {
@@ -96,7 +96,7 @@ export async function generateMetadata({
         "max-snippet": -1,
       },
     },
-    category: "blogging",
+    category: "scam-report",
     other: {
       "apple-mobile-web-app-capable": "yes",
       "mobile-web-app-capable": "yes",

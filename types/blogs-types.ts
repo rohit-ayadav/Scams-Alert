@@ -84,6 +84,7 @@ const CATEGORIES = [
   { value: "crypto", label: "Crypto / Digital Asset Scam" },
   { value: "service", label: "Fake Services / Agencies" },
   { value: "techsupport", label: "Tech Support Scam" },
+  { value: "physicalscam", label: "Physical / In-Person Scam" },
   { value: "others", label: "Others" }
 ];
 

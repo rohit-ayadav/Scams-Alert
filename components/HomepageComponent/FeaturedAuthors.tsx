@@ -11,7 +11,7 @@ import React, { useEffect, useState } from 'react';
 import { getTrendingAuthors } from '@/action/my-profile-action';
 import ShowProfileImage from '../ShowProfileImage';
 import { ChevronRight } from 'lucide-react';
-import { cn } from '@/lib/utils'; // Assuming you have this utility
+import { cn } from '@/lib/utils';
 
 const FeaturedAuthors = () => {
     const { isDarkMode } = useTheme();
@@ -54,7 +54,7 @@ const FeaturedAuthors = () => {
             )}>
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
-                        <h2 className="text-3xl font-bold">Trending Authors</h2>
+                        <h2 className="text-3xl font-bold">Top Contributors</h2>
                     </div>
                     <div className="flex justify-center items-center py-12">
                         <div className={cn(
@@ -74,7 +74,7 @@ const FeaturedAuthors = () => {
         )}>
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
-                    <h2 className="text-3xl font-bold">Trending Authors</h2>
+                    <h2 className="text-3xl font-bold">Top Contributors</h2>
                     <Link href="/author">
                         <Button
                             variant="default"
@@ -148,7 +148,8 @@ const FeaturedAuthors = () => {
                                             "text-xs text-center line-clamp-2",
                                             isDarkMode ? "text-gray-400" : "text-gray-500"
                                         )}>
-                                            {author?.bio && cleanMarkdown(author?.bio).split("\n")[0].slice(0, 30) || "Tech enthusiast and content creator"}
+                                            {author?.bio && cleanMarkdown(author?.bio).split("\n")[0].slice(0, 30)
+                                                || "Community member sharing scam awareness"}
                                         </p>
                                     </CardContent>
                                 </Card>

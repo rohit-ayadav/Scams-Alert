@@ -40,7 +40,7 @@ interface Author {
 }
 
 const ProfileNEW = ({ authorPosts, author }: { authorPosts: BlogPostType[], author: Author }) => {
-    const { isDarkMode, toggleDarkMode, searchTerm, setSearchTerm, selectedCategory, setSelectedCategory, sortBy, setSortBy, activeTab, setActiveTab, isShareSheetOpen, setIsShareSheetOpen, filteredAndSortedPosts, categories, totalStats, copyProfileLink, } = useProfile({ authorPosts, author });
+    const { isDarkMode, toggleDarkMode, searchTerm, setSearchTerm, selectedCategory, setSelectedCategory, sortBy, setSortBy, activeTab, setActiveTab, isShareSheetOpen, setIsShareSheetOpen, filteredAndSortedPosts, categories, totalStats, copyProfileLink, copied, setCopied } = useProfile({ authorPosts, author });
     return (
         <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => window.location.reload()}>
             <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
@@ -193,7 +193,7 @@ const ProfileNEW = ({ authorPosts, author }: { authorPosts: BlogPostType[], auth
                         </Tabs>
 
                         <Newsletter />
-                        <ShareCTA author={author} copyProfileLink={copyProfileLink} />
+                        <ShareCTA author={author} copyProfileLink={copyProfileLink} copied={copied} setCopied={setCopied} />
                     </main>
                 </div>
             </div>
